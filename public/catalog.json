@@ -1,0 +1,58 @@
+{
+  "updated":"2026-09-11",
+  "profile": {
+    "name":"Everton Soares",
+    "role":{"pt":"IA aplicada, automação e software","en":"Applied AI, automation & software"},
+    "bio":{"pt":"Construo ferramentas para organizar o trabalho, conectar sistemas e transformar informação em ação. Python, integrações com IA e projetos local-first, com atenção à confiabilidade.","en":"I build tools to organize work, connect systems and turn information into action. Python, AI integrations and local-first projects, with a focus on reliability."},
+    "location":{"pt":"São Paulo, Brasil","en":"São Paulo, Brazil"},
+    "github":"https://github.com/everton-soares1985",
+    "linkedin":"https://www.linkedin.com/in/everton-de-oliveira-soares-857630146/",
+    "upwork":"https://www.upwork.com/freelancers/~016771dda07fdb3a35",
+    "youtube":"https://www.youtube.com/@GrowthTech.Solutions"
+  },
+  "projects":[
+    {"id":"focus","name":"Focus Cockpit","category":"software","image":"/assets/focus.png","tags":["Tauri","React","SQLite"],"goals":["organize","journey"],"url":"https://github.com/everton-soares1985/focus-cockpit",
+      "summary":{"pt":"Prioridades, projetos e aprendizado em um espaço pessoal de trabalho.","en":"Priorities, projects and learning in a personal workspace."},
+      "problem":{"pt":"Informações e próximos passos espalhados entre ferramentas e arquivos.","en":"Information and next actions scattered across tools and files."},
+      "approach":{"pt":"Uma aplicação desktop local-first com áreas de foco, projetos, cursos e documentos.","en":"A local-first desktop application with focus, project, course and document views."},
+      "limit":{"pt":"Projeto pessoal. Não representa uma implantação empresarial ou resultados de clientes.","en":"Personal project. It does not represent an enterprise deployment or client results."}},
+    {"id":"radar","name":"Global Builder Radar","category":"automation","image":"/assets/radar.png","tags":["Python","APIs","Pipeline"],"goals":["automate","organize"],"url":"https://github.com/everton-soares1985/global-builder-opportunity-radar","video":"https://www.youtube.com/watch?v=rKfwS7Cktoo",
+      "summary":{"pt":"Organização e análise de oportunidades para construir software.","en":"Organizing and analyzing opportunities to build software."},
+      "problem":{"pt":"Encontrar sinais úteis em informações distribuídas e reduzir pesquisa repetitiva.","en":"Finding useful signals in distributed information and reducing repetitive research."},
+      "approach":{"pt":"Um pipeline para reunir e organizar oportunidades, com uma interface para consulta.","en":"A pipeline to collect and organize opportunities, with an interface for review."},
+      "limit":{"pt":"Os sinais precisam de avaliação humana. O projeto não garante demanda ou retorno financeiro.","en":"Signals require human assessment. The project does not guarantee demand or financial returns."}},
+    {"id":"maintenance","name":"Prescriptive Maintenance","category":"ai","tags":["Python","RAG","FastAPI"],"goals":["documents","journey"],"url":"https://github.com/everton-soares1985/prescriptive-maintenance-platform",
+      "summary":{"pt":"Exploração de IA aplicada ao conhecimento de manutenção.","en":"Exploring AI applied to maintenance knowledge."},
+      "problem":{"pt":"Consultar conhecimento técnico de manutenção de forma contextualizada.","en":"Consulting technical maintenance knowledge in context."},
+      "approach":{"pt":"Projeto demonstrativo com recuperação de informações e interface para consulta de documentos.","en":"A demonstration project with information retrieval and a document-query interface."},
+      "limit":{"pt":"Demonstração, não sistema industrial de produção. Não substitui manuais, inspeções ou profissionais habilitados.","en":"A demonstration, not an industrial production system. It does not replace manuals, inspections or qualified professionals."}},
+    {"id":"publisher","name":"GitHub Project Publisher","category":"automation","tags":["Python","Git","Governance"],"goals":["automate","journey"],"url":"https://github.com/everton-soares1985/github-project-publisher",
+      "summary":{"pt":"Preparação e revisão de repositórios para publicação organizada.","en":"Preparing and reviewing repositories for organized publication."},
+      "problem":{"pt":"Publicar projetos com documentação coerente sem expor arquivos privados.","en":"Publishing projects with coherent documentation without exposing private files."},
+      "approach":{"pt":"Um fluxo de revisão, padronização e verificações antes da publicação.","en":"A workflow of review, standardization and pre-publication checks."},
+      "limit":{"pt":"A revisão humana continua necessária antes de publicar qualquer repositório.","en":"Human review is still required before publishing any repository."}}
+  ],
+  "courses":[
+    {"title":"Google IT Automation with Python","issuer":"Google / Coursera","status":"done","credential":"https://www.coursera.org/account/accomplishments/professional-cert/BPLDXASSJLHP","credentialId":"BPLDXASSJLHP","tags":["Python","Automation"]},
+    {"title":"Configuration Management and the Cloud","issuer":"Google / Coursera","status":"done","tags":["Cloud"]},
+    {"title":"Troubleshooting and Debugging Techniques","issuer":"Google / Coursera","status":"done","tags":["Debugging"]},
+    {"title":"Introduction to Selenium","issuer":"Simplilearn SkillUp","status":"done","tags":["Automation"]},
+    {"title":"IBM AI Developer Professional Certificate","issuer":"IBM / Coursera","status":"doing","tags":["AI"]},
+    {"title":"Make","issuer":"Make Academy","status":"doing","tags":["Automation"]},
+    {"title":"Multi AI Agent Systems with crewAI","issuer":"DeepLearning.AI","status":"planned","tags":["Agents"]},
+    {"title":"AI Agents in LangGraph","issuer":"DeepLearning.AI","status":"planned","tags":["Agents"]},
+    {"title":"AI Agents and Agentic AI in Python","issuer":"Vanderbilt / Coursera","status":"planned","tags":["Python","Agents"]}
+  ],
+  "books":[
+    {"title":"AI Agents in Depth","author":"Bojie Li","edition":"v1.2","status":"reading"},
+    {"title":"Deep Work","author":"Cal Newport","status":"read","cover":"assets/book-deep-work.jpg","reference":"https://openlibrary.org/works/OL17713267W"},
+    {"title":"Antifrágil","author":"Nassim Nicholas Taleb","status":"read","cover":"assets/book-antifragile.jpg","reference":"https://openlibrary.org/works/OL16726829W"},
+    {"title":"Inteligência Emocional","author":"Daniel Goleman","status":"read"},
+    {"title":"Dar e Receber","author":"Adam Grant","status":"read","cover":"assets/book-give-take.jpg","reference":"https://openlibrary.org/works/OL17312332W"},
+    {"title":"Steve Jobs","author":"Walter Isaacson","status":"read","cover":"assets/book-steve-jobs.jpg","reference":"https://openlibrary.org/works/OL16085155W"},
+    {"title":"Outliers","author":"Malcolm Gladwell","status":"read"},
+    {"title":"Sapiens","author":"Yuval Noah Harari","status":"planned"},
+    {"title":"Em Busca de Sentido","author":"Viktor E. Frankl","status":"planned"},
+    {"title":"Atomic Habits","author":"James Clear","status":"planned"}
+  ]
+}

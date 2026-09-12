@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mock 3: Dev Cockpit / Flight Deck — Everton Soares</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050608;
+      --cockpit-panel: #0b0e14;
+      --cockpit-border: rgba(255, 255, 255, 0.08);
+      --cockpit-border-active: rgba(245, 158, 11, 0.4);
+      --fg: #e2e8f0;
+      --muted: #64748b;
+      --amber: #f59e0b;
+      --amber-glow: 0 0 15px rgba(245, 158, 11, 0.25);
+      --emerald: #10b981;
+      --cyan: #06b6d4;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-sans: 'Inter', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(rgba(245, 158, 11, 0.04) 1px, transparent 0),
+        radial-gradient(circle at 100% 0%, rgba(6, 182, 212, 0.05) 0%, transparent 40%);
+      background-size: 32px 32px, 100% 100%;
+    }
+
+    /* Top Aviation Telemetry Header */
+    .telemetry-header {
+      background: #080a0f;
+      border-bottom: 1px solid var(--cockpit-border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+    .telemetry-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .telemetry-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--cockpit-border);
+      border-radius: 4px;
+    }
+    .beacon {
+      width: 7px;
+      height: 7px;
+      background: var(--emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--emerald);
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .telemetry-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .telemetry-btn {
+      color: var(--fg);
+      text-decoration: none;
+      padding: 4px 10px;
+      border: 1px solid var(--cockpit-border);
+      border-radius: 4px;
+      font-size: 11px;
+      transition: all 0.2s;
+    }
+    .telemetry-btn:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+
+    /* Main Cockpit Layout */
+    .cockpit-container {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      flex: 1;
+      max-width: 1400px;
+      width: 100%;
+      margin: 20px auto;
+      padding: 0 20px;
+      gap: 20px;
+    }
+
+    /* Left Control Sidebar */
+    .cockpit-sidebar {
+      background: var(--cockpit-panel);
+      border: 1px solid var(--cockpit-border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .pilot-card {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--cockpit-border);
+    }
+    .pilot-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin: 0 auto 12px;
+      border: 1px solid var(--amber);
+      box-shadow: var(--amber-glow);
+    }
+    .pilot-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .pilot-callsign {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--amber);
+      margin-top: 2px;
+    }
+
+    /* Nav Tabs */
+    .dock-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .dock-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+      font-family: var(--font-mono);
+    }
+    .dock-btn:hover {
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
+    }
+    .dock-btn.active {
+      background: rgba(245, 158, 11, 0.08);
+      border-color: var(--cockpit-border-active);
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    /* Telemetry Quick Gauges */
+    .gauges-box {
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--cockpit-border);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+    .gauge-row {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+    }
+    .gauge-val { color: var(--emerald); }
+
+    /* Central Cockpit Workspace */
+    .cockpit-workspace {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Panel Box */
+    .cockpit-card {
+      background: var(--cockpit-panel);
+      border: 1px solid var(--cockpit-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .card-header-bar {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--cockpit-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      font-weight: 600;
+    }
+    .dot-indicator {
+      width: 6px;
+      height: 6px;
+      background: var(--amber);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--amber);
+    }
+
+    /* Project Inspector Layout */
+    .inspector-body {
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .preview-canvas {
+      border: 1px solid var(--cockpit-border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+    }
+    .preview-canvas img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .inspector-details {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .inspector-h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .inspector-p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .telemetry-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--cockpit-border);
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: var(--cyan);
+    }
+
+    /* Live Telemetry Console / Output */
+    .console-log-box {
+      background: #020305;
+      border: 1px solid var(--cockpit-border);
+      border-radius: 6px;
+      padding: 12px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #94a3b8;
+      max-height: 140px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .log-entry { display: flex; gap: 8px; }
+    .log-ts { color: #475569; }
+    .log-ok { color: var(--emerald); }
+    .log-warn { color: var(--amber); }
+
+    /* Project Selector Strip */
+    .project-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid var(--cockpit-border);
+    }
+    .strip-item {
+      padding: 10px 14px;
+      border: 1px solid var(--cockpit-border);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.02);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .strip-item:hover {
+      border-color: rgba(245, 158, 11, 0.3);
+      background: rgba(245, 158, 11, 0.03);
+    }
+    .strip-item.active {
+      border-color: var(--amber);
+      background: rgba(245, 158, 11, 0.06);
+    }
+    .strip-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .strip-meta {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Embedded Terminal */
+    .terminal-section {
+      background: #030407;
+      border: 1px solid var(--cockpit-border);
+      border-radius: 12px;
+      padding: 18px 24px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+    .terminal-output {
+      color: #94a3b8;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .terminal-prompt-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .prompt-label { color: var(--amber); font-weight: 700; }
+    .terminal-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      outline: none;
+    }
+
+    @media (max-width: 900px) {
+      .cockpit-container { grid-template-columns: 1fr; }
+      .inspector-body { grid-template-columns: 1fr; }
+      .project-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Aviation Header -->
+  <header class="telemetry-header">
+    <div class="telemetry-left">
+      <div class="telemetry-tag">
+        <span class="beacon"></span>
+        <span>FLIGHT DECK // ONLINE</span>
+      </div>
+      <span style="color: var(--muted);">MISSION: RELIABLE AI & AUTOMATION</span>
+    </div>
+    <div class="telemetry-right">
+      <a href="../downloads/Everton-Soares-PT.pdf" class="telemetry-btn" download>CV PT.pdf</a>
+      <a href="../downloads/Everton-Soares-EN.pdf" class="telemetry-btn" download>Resume EN.pdf</a>
+      <a href="https://github.com/everton-soares1985" target="_blank" class="telemetry-btn">GitHub ↗</a>
+    </div>
+  </header>
+
+  <!-- Cockpit Container -->
+  <div class="cockpit-container">
+    
+    <!-- Left Cockpit Dock -->
+    <aside class="cockpit-sidebar">
+      <div class="pilot-card">
+        <img src="../assets/everton.jpg" alt="Everton Soares" class="pilot-avatar">
+        <h1 class="pilot-name">Everton Soares</h1>
+        <div class="pilot-callsign">DEV & AIRFRAME MINDSET</div>
+      </div>
+
+      <nav class="dock-menu">
+        <button class="dock-btn active" onclick="switchView('inspector')">
+          <span>01.</span> Project Inspector
+        </button>
+        <button class="dock-btn" onclick="switchView('telemetry')">
+          <span>02.</span> Telemetria & Stack
+        </button>
+        <button class="dock-btn" onclick="switchView('logs')">
+          <span>03.</span> Flight Logs (Trajetória)
+        </button>
+        <button class="dock-btn" onclick="switchView('terminal')">
+          <span>04.</span> Cockpit CLI
+        </button>
+      </nav>
+
+      <div class="gauges-box">
+        <div class="gauge-row">
+          <span>ARCH:</span>
+          <span class="gauge-val">LOCAL-FIRST</span>
+        </div>
+        <div class="gauge-row">
+          <span>SAFETY CHECK:</span>
+          <span class="gauge-val">100% PASSED</span>
+        </div>
+        <div class="gauge-row">
+          <span>UPTIME:</span>
+          <span class="gauge-val">ACTIVE</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Workspace Area -->
+    <main class="cockpit-workspace">
+
+      <!-- View 1: Project Inspector -->
+      <section id="view-inspector" class="cockpit-card">
+        <div class="card-header-bar">
+          <div class="card-title">
+            <span class="dot-indicator"></span>
+            <span>INSPECTOR DE SISTEMAS // PROJETOS ATIVOS</span>
+          </div>
+          <span style="color: var(--muted);">SELECT SYSTEM TO INSPECT</span>
+        </div>
+
+        <!-- Project Selector Strip -->
+        <div class="project-strip">
+          <div class="strip-item active" onclick="selectProject('focus')">
+            <div class="strip-title">Focus Cockpit</div>
+            <div class="strip-meta">Tauri · React · SQLite</div>
+          </div>
+          <div class="strip-item" onclick="selectProject('radar')">
+            <div class="strip-title">Global Builder Radar</div>
+            <div class="strip-meta">Python · Pipeline · APIs</div>
+          </div>
+          <div class="strip-item" onclick="selectProject('maintenance')">
+            <div class="strip-title">Prescriptive Maint.</div>
+            <div class="strip-meta">RAG · FastAPI · Vector</div>
+          </div>
+          <div class="strip-item" onclick="selectProject('publisher')">
+            <div class="strip-title">Project Publisher</div>
+            <div class="strip-meta">Git · Governança · CI</div>
+          </div>
+        </div>
+
+        <!-- Dynamic Inspector Content -->
+        <div class="inspector-body" id="inspector-content">
+          <div class="preview-canvas">
+            <img id="proj-img" src="../assets/focus.png" alt="Focus Cockpit Preview">
+          </div>
+          <div class="inspector-details">
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--amber);" id="proj-type">DESKTOP APPLICATION · LOCAL-FIRST</div>
+            <h2 class="inspector-h2" id="proj-title">Focus Cockpit</h2>
+            <p class="inspector-p" id="proj-desc">
+              Espaço de trabalho pessoal e de produtividade desenvolvido em Tauri, React e SQLite. Organiza prioridades, repositórios, cursos e documentos sem expor dados privados a servidores externos.
+            </p>
+
+            <div class="telemetry-chips" id="proj-stack">
+              <span class="chip">Tauri</span>
+              <span class="chip">Rust Core</span>
+              <span class="chip">React</span>
+              <span class="chip">SQLite Local</span>
+            </div>
+
+            <!-- Console Log Simulation -->
+            <div class="console-log-box" id="proj-logs">
+              <div class="log-entry"><span class="log-ts">16:30:02</span> <span class="log-ok">[INIT]</span> Tauri runtime initialized (zero cloud latency)</div>
+              <div class="log-entry"><span class="log-ts">16:30:03</span> <span class="log-ok">[DB]</span> SQLite database locked locally; no external transmission</div>
+              <div class="log-entry"><span class="log-ts">16:30:05</span> <span class="log-ok">[READY]</span> Workspaces, documents and focus tracker operational</div>
+            </div>
+
+            <div style="display: flex; gap: 12px; margin-top: 8px;">
+              <a id="proj-link" href="https://github.com/everton-soares1985/focus-cockpit" target="_blank" class="telemetry-btn" style="border-color: var(--amber); color: var(--amber); font-weight: 600;">
+                Abrir Repositório no GitHub ↗
+              </a>
+              <a id="proj-video" href="#" target="_blank" class="telemetry-btn" style="display: none; border-color: #ef4444; color: #f87171;">
+                Assistir Vídeo ▶
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- View 2: Telemetry & Stack (Hidden by default, switchable) -->
+      <section id="view-telemetry" class="cockpit-card" style="display: none; padding: 24px;">
+        <h2 style="font-size: 20px; color: #fff; margin-bottom: 16px; font-family: var(--font-mono);">// Telemetria de Competências</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: 8px; border: 1px solid var(--cockpit-border);">
+            <div style="color: var(--amber); font-family: var(--font-mono); font-size: 12px; margin-bottom: 8px;">01. LINGUAGENS & RUNTIMES</div>
+            <div style="font-size: 14px; color: #fff; line-height: 1.8;">Python 3.12+ · Rust (Tauri FFI) · JavaScript/TypeScript · SQL</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: 8px; border: 1px solid var(--cockpit-border);">
+            <div style="color: var(--cyan); font-family: var(--font-mono); font-size: 12px; margin-bottom: 8px;">02. IA & AGENTES AUTÔNOMOS</div>
+            <div style="font-size: 14px; color: #fff; line-height: 1.8;">CrewAI · LangGraph · FastAPI · RAG · Vector Embeddings</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: 8px; border: 1px solid var(--cockpit-border);">
+            <div style="color: var(--emerald); font-family: var(--font-mono); font-size: 12px; margin-bottom: 8px;">03. RIGOR & CONFIABILIDADE</div>
+            <div style="font-size: 14px; color: #fff; line-height: 1.8;">Mecânica de Aeronaves (ANAC) · Inspeção Veicular · Guardrails</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- View 3: Flight Logs / Trajectory (Hidden by default, switchable) -->
+      <section id="view-logs" class="cockpit-card" style="display: none; padding: 24px;">
+        <h2 style="font-size: 20px; color: #fff; margin-bottom: 16px; font-family: var(--font-mono);">// Flight Logs — Trajetória de Voo</h2>
+        <div style="font-family: var(--font-mono); font-size: 13px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="padding-bottom: 12px; border-bottom: 1px solid var(--cockpit-border);">
+            <span style="color: var(--amber);">[NOW]</span> <strong>Engenharia de Software & IA Aplicada</strong>
+            <p style="color: var(--muted); margin-top: 4px;">Construção de projetos próprios em automação, pipelines e agentes inteligentes.</p>
+          </div>
+          <div style="padding-bottom: 12px; border-bottom: 1px solid var(--cockpit-border);">
+            <span style="color: var(--cyan);">[2026]</span> <strong>Inspetor Técnico Veicular Jr.</strong>
+            <p style="color: var(--muted); margin-top: 4px;">Atlântida Inspeção Veicular Ltda. Inspeções de conformidade e segurança técnica.</p>
+          </div>
+          <div>
+            <span style="color: var(--emerald);">[FOUNDATION]</span> <strong>Mecânico de Manutenção de Aeronaves</strong>
+            <p style="color: var(--muted); margin-top: 4px;">Treinamento em sistemas mecânicos, elétricos e hidráulicos de aviões com foco em checklist e investigação de causas raiz.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Embedded Terminal -->
+      <section class="terminal-section">
+        <div class="terminal-output" id="term-history">
+          <div>COCKPIT OS v2.4 initialized. Type <span style="color: var(--amber);">help</span> or click command shortcuts below:</div>
+          <div style="display: flex; gap: 10px; margin-top: 6px;">
+            <button onclick="execCmd('projects')" style="background: none; border: 1px solid var(--cockpit-border); color: var(--cyan); padding: 2px 8px; border-radius: 4px; font-family: inherit; font-size: 11px; cursor: pointer;">projects</button>
+            <button onclick="execCmd('stack')" style="background: none; border: 1px solid var(--cockpit-border); color: var(--cyan); padding: 2px 8px; border-radius: 4px; font-family: inherit; font-size: 11px; cursor: pointer;">stack</button>
+            <button onclick="execCmd('bio')" style="background: none; border: 1px solid var(--cockpit-border); color: var(--cyan); padding: 2px 8px; border-radius: 4px; font-family: inherit; font-size: 11px; cursor: pointer;">bio</button>
+            <button onclick="execCmd('cv')" style="background: none; border: 1px solid var(--cockpit-border); color: var(--cyan); padding: 2px 8px; border-radius: 4px; font-family: inherit; font-size: 11px; cursor: pointer;">cv</button>
+          </div>
+        </div>
+        <form id="term-form" onsubmit="handleTerm(event)" class="terminal-prompt-line">
+          <span class="prompt-label">everton@cockpit:~ $</span>
+          <input type="text" id="term-input" class="terminal-input" placeholder="Digite um comando..." autocomplete="off">
+        </form>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    const projectsDb = {
+      focus: {
+        title: 'Focus Cockpit',
+        type: 'DESKTOP APPLICATION · LOCAL-FIRST',
+        img: '../assets/focus.png',
+        desc: 'Espaço de trabalho pessoal e de produtividade desenvolvido em Tauri, React e SQLite. Organiza prioridades, repositórios, cursos e documentos sem expor dados privados a servidores externos.',
+        stack: ['Tauri (Rust)', 'React', 'SQLite Local', 'Zero Telemetry'],
+        logs: [
+          '<span class="log-ts">16:30:02</span> <span class="log-ok">[INIT]</span> Tauri runtime initialized (zero cloud latency)',
+          '<span class="log-ts">16:30:03</span> <span class="log-ok">[DB]</span> SQLite database locked locally; no external transmission',
+          '<span class="log-ts">16:30:05</span> <span class="log-ok">[READY]</span> Workspaces, documents and focus tracker operational'
+        ],
+        link: 'https://github.com/everton-soares1985/focus-cockpit',
+        video: null
+      },
+      radar: {
+        title: 'Global Builder Radar',
+        type: 'PIPELINE · INTELIGÊNCIA DE MERCADO',
+        img: '../assets/radar.png',
+        desc: 'Pipeline automatizado que analisa sinais e oportunidades globais para construção de software a partir de fontes dispersas, reduzindo horas de pesquisa repetitiva.',
+        stack: ['Python', 'REST APIs', 'Data Extraction', 'Streamlit UI'],
+        logs: [
+          '<span class="log-ts">16:31:10</span> <span class="log-ok">[INGEST]</span> Pulling 350+ data sources across global networks',
+          '<span class="log-ts">16:31:12</span> <span class="log-ok">[FILTER]</span> Deterministic heuristic applied; noise reduced by 88%',
+          '<span class="log-ts">16:31:15</span> <span class="log-ok">[DEMO]</span> YouTube technical walkthrough recording available'
+        ],
+        link: 'https://github.com/everton-soares1985/global-builder-opportunity-radar',
+        video: 'https://www.youtube.com/watch?v=rKfwS7Cktoo'
+      },
+      maintenance: {
+        title: 'Prescriptive Maintenance Platform',
+        type: 'IA APLICADA · RAG & VETORES',
+        img: '../assets/focus.png',
+        desc: 'Plataforma de IA com RAG para consulta contextual de manuais de manutenção aeronáutica e industrial. Prioriza respostas com citações exatas e sem alucinações.',
+        stack: ['Python', 'FastAPI', 'RAG / Vector DB', 'Zero Hallucination'],
+        logs: [
+          '<span class="log-ts">16:32:00</span> <span class="log-ok">[VECTOR]</span> 14,200 PDF manual sections indexed in local vector space',
+          '<span class="log-ts">16:32:02</span> <span class="log-ok">[QUERY]</span> RAG retrieval: citation strictness factor = 1.0 (Strict)',
+          '<span class="log-ts">16:32:04</span> <span class="log-ok">[GUARD]</span> Direct quote validation confirmed before presentation'
+        ],
+        link: 'https://github.com/everton-soares1985/prescriptive-maintenance-platform',
+        video: null
+      },
+      publisher: {
+        title: 'GitHub Project Publisher',
+        type: 'AUTOMAÇÃO · GOVERNANÇA GIT',
+        img: '../assets/radar.png',
+        desc: 'Fluxo automatizado de auditoria, sanitização e governança antes da publicação pública de repositórios, garantindo conformidade sem expor arquivos sensíveis.',
+        stack: ['Python', 'Git CLI', 'Security Audit', 'Automation'],
+        logs: [
+          '<span class="log-ts">16:33:01</span> <span class="log-ok">[SCAN]</span> Scanning repository for leaked env or token patterns',
+          '<span class="log-ts">16:33:02</span> <span class="log-ok">[CLEAN]</span> Standardizing README and license metadata',
+          '<span class="log-ts">16:33:03</span> <span class="log-ok">[AUDIT]</span> Verified clean commit history ready for release'
+        ],
+        link: 'https://github.com/everton-soares1985/github-project-publisher',
+        video: null
+      }
+    };
+
+    function selectProject(key) {
+      const p = projectsDb[key];
+      if (!p) return;
+      document.querySelectorAll('.strip-item').forEach(el => el.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      document.getElementById('proj-title').textContent = p.title;
+      document.getElementById('proj-type').textContent = p.type;
+      document.getElementById('proj-desc').textContent = p.desc;
+      document.getElementById('proj-img').src = p.img;
+      document.getElementById('proj-link').href = p.link;
+      
+      const vBtn = document.getElementById('proj-video');
+      if (p.video) {
+        vBtn.style.display = 'inline-block';
+        vBtn.href = p.video;
+      } else {
+        vBtn.style.display = 'none';
+      }
+
+      document.getElementById('proj-stack').innerHTML = p.stack.map(s => `<span class="chip">${s}</span>`).join('');
+      document.getElementById('proj-logs').innerHTML = p.logs.map(l => `<div class="log-entry">${l}</div>`).join('');
+    }
+
+    function switchView(viewKey) {
+      document.querySelectorAll('.dock-btn').forEach(b => b.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      document.getElementById('view-inspector').style.display = viewKey === 'inspector' ? 'block' : 'none';
+      document.getElementById('view-telemetry').style.display = viewKey === 'telemetry' ? 'block' : 'none';
+      document.getElementById('view-logs').style.display = viewKey === 'logs' ? 'block' : 'none';
+      if (viewKey === 'terminal') {
+        document.getElementById('view-inspector').style.display = 'block';
+        document.getElementById('term-input').focus();
+      }
+    }
+
+    function handleTerm(e) {
+      e.preventDefault();
+      const input = document.getElementById('term-input');
+      const val = input.value.trim().toLowerCase();
+      input.value = '';
+      execCmd(val);
+    }
+
+    function execCmd(cmd) {
+      const hist = document.getElementById('term-history');
+      const addLine = (txt) => {
+        const d = document.createElement('div');
+        d.innerHTML = txt;
+        hist.appendChild(d);
+        hist.scrollTop = hist.scrollHeight;
+      };
+
+      addLine(`<span style="color: var(--amber);">everton@cockpit:~$</span> ${cmd}`);
+
+      if (cmd === 'help') {
+        addLine('Available commands: <span style="color: var(--cyan);">projects</span>, <span style="color: var(--cyan);">stack</span>, <span style="color: var(--cyan);">bio</span>, <span style="color: var(--cyan);">cv</span>, <span style="color: var(--cyan);">clear</span>');
+      } else if (cmd === 'projects') {
+        addLine('Projects: Focus Cockpit, Global Builder Radar, Prescriptive Maintenance, Project Publisher.');
+      } else if (cmd === 'stack') {
+        addLine('Core Stack: Python, FastAPI, CrewAI, LangGraph, Tauri (Rust), SQLite, Local-First.');
+      } else if (cmd === 'bio') {
+        addLine('Everton Soares: Airframe Maintenance background ➔ Applied AI, Automation & Software Engineering.');
+      } else if (cmd === 'cv') {
+        addLine('<a href="../downloads/Everton-Soares-PT.pdf" download style="color: var(--emerald);">[DOWNLOAD] Curriculo_Everton_Soares_PT.pdf</a>');
+      } else if (cmd === 'clear') {
+        hist.innerHTML = '';
+      } else {
+        addLine(`Command not recognized: "${cmd}". Type 'help'.`);
+      }
+    }
+  </script>
+</body>
+</html>

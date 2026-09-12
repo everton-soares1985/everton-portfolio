@@ -1,0 +1,21 @@
+# CONFIGURACOES: Oracle Linux host; API and OmniRoute remain on loopback.
+services:
+  portfolio-api:
+    build: .
+    network_mode: host
+    env_file: .env
+    environment:
+      HOST: 127.0.0.1
+      PORT: 4317
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 64
+    mem_limit: 256m
+    cpus: 0.5
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: "2"

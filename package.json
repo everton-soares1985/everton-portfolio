@@ -1,0 +1,9 @@
+{
+  "name": "everton-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22"},
+  "scripts": {"start": "node server/http.mjs", "test": "node --test tests/*.test.mjs"},
+  "dependencies": {"lucide": "0.468.0"}
+}

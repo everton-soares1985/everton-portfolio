@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Everton Soares — Desktop OS Concept</title>
+<link rel="stylesheet" href="concept-6-os.css">
+</head>
+<body>
+
+<div class="menubar">
+  <span class="logo">ES<span class="logo-dot">●</span>OS</span>
+  <span class="m-item strong">Everton Soares</span>
+  <span class="m-item hide-m">Projetos</span>
+  <span class="m-item hide-m">Formação</span>
+  <span class="m-item hide-m">Contato</span>
+  <div class="right">
+    <span class="avail">Aberto a oportunidades</span>
+    <span id="clock">--:--</span>
+  </div>
+</div>
+
+<div class="desk-icons">
+  <div class="d-icon" data-win="win-about"><div class="glyph">👤</div>sobre mim</div>
+  <div class="d-icon" data-win="win-projects"><div class="glyph">📁</div>projetos</div>
+  <div class="d-icon" data-win="win-books"><div class="glyph">📚</div>estante</div>
+  <div class="d-icon" data-win="win-terminal"><div class="glyph">⌨️</div>terminal</div>
+</div>
+
+<!-- ABOUT -->
+<div class="window" id="win-about">
+  <div class="titlebar">
+    <div class="lights">
+      <button class="light r" data-close="win-about" aria-label="Fechar"></button>
+      <button class="light y" data-close="win-about" aria-label="Minimizar"></button>
+      <button class="light g" aria-label="Maximizar"></button>
+    </div>
+    <span class="win-title">sobre-mim.txt — Editor</span>
+  </div>
+  <div class="win-body">
+    <div class="about-head">
+      <img src="../assets/everton.jpg" alt="Everton Soares">
+      <div>
+        <h1>Everton Soares</h1>
+        <div class="role">IA aplicada, automação e software · São Paulo, Brasil</div>
+        <span class="badge">● Aberto a oportunidades</span>
+      </div>
+    </div>
+    <p>Construo ferramentas para organizar o trabalho, conectar sistemas e transformar informação em ação. Python, integrações com IA e projetos local-first, com atenção à confiabilidade.</p>
+    <p><b>Da manutenção à construção de software</b> — uma trajetória em construção.</p>
+    <div class="tl">
+      <div class="tl-row"><span class="yr">BASE</span><div><b>Base técnica</b><span>Manutenção aeronáutica</span></div></div>
+      <div class="tl-row"><span class="yr">2018+</span><div><b>Atuação independente</b><span>Mercados financeiros</span></div></div>
+      <div class="tl-row"><span class="yr">MAR—JUN 2026</span><div><b>Inspeção técnica veicular</b><span>Inspetor Técnico Jr. · Atlântida Inspeção Veicular</span></div></div>
+      <div class="tl-row"><span class="yr">AGORA</span><div><b>Projetos próprios</b><span>Automação, IA e software</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="window" id="win-projects">
+  <div class="titlebar">
+    <div class="lights">
+      <button class="light r" data-close="win-projects" aria-label="Fechar"></button>
+      <button class="light y" data-close="win-projects" aria-label="Minimizar"></button>
+      <button class="light g" aria-label="Maximizar"></button>
+    </div>
+    <span class="win-title">projetos — Finder</span>
+  </div>
+  <div class="win-body">
+    <div class="finder-grid" id="finder-grid"></div>
+    <div class="f-detail" id="f-detail"></div>
+  </div>
+</div>
+
+<!-- BOOKS -->
+<div class="window" id="win-books">
+  <div class="titlebar">
+    <div class="lights">
+      <button class="light r" data-close="win-books" aria-label="Fechar"></button>
+      <button class="light y" data-close="win-books" aria-label="Minimizar"></button>
+      <button class="light g" aria-label="Maximizar"></button>
+    </div>
+    <span class="win-title">estante — Leituras</span>
+  </div>
+  <div class="win-body" id="books-body"></div>
+</div>
+
+<!-- TERMINAL -->
+<div class="window dark" id="win-terminal">
+  <div class="titlebar">
+    <div class="lights">
+      <button class="light r" data-close="win-terminal" aria-label="Fechar"></button>
+      <button class="light y" data-close="win-terminal" aria-label="Minimizar"></button>
+      <button class="light g" aria-label="Maximizar"></button>
+    </div>
+    <span class="win-title">everton@portfolio — zsh</span>
+  </div>
+  <div class="win-body term-body" id="term-body">
+    <div class="t-out" id="t-out"><span class="acc">Bem-vindo ao terminal do portfólio.</span>
+Digite <span class="warn">help</span> para ver os comandos disponíveis.
+</div>
+    <div class="t-line">
+      <span class="t-prompt">everton:~ $</span>
+      <input id="t-input" type="text" autocomplete="off" spellcheck="false" placeholder="help">
+    </div>
+  </div>
+</div>
+
+<!-- DOCK -->
+<div class="dock-wrap">
+  <div class="dock">
+    <button class="dock-item di-about running" data-win="win-about">👤<span class="tip">Sobre mim</span><span class="run-dot"></span></button>
+    <button class="dock-item di-projects running" data-win="win-projects">📁<span class="tip">Projetos</span><span class="run-dot"></span></button>
+    <button class="dock-item di-books running" data-win="win-books">📚<span class="tip">Estante</span><span class="run-dot"></span></button>
+    <button class="dock-item di-terminal running" data-win="win-terminal">⌨️<span class="tip">Terminal</span><span class="run-dot"></span></button>
+    <div class="dock-sep"></div>
+    <a class="dock-item di-cv" href="../downloads/Everton-Soares-PT.pdf">📄<span class="tip">Currículo PDF</span></a>
+    <a class="dock-item di-gh" href="https://github.com/everton-soares1985">🐙<span class="tip">GitHub</span></a>
+    <a class="dock-item di-li" href="https://www.linkedin.com/in/everton-de-oliveira-soares-857630146/">💼<span class="tip">LinkedIn</span></a>
+  </div>
+</div>
+
+<script src="concept-6-os.js"></script>
+</body>
+</html>

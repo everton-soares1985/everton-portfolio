@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Showcase Hub: Novos Mocks para o Portfólio de Everton Soares</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0d14;
+      --panel: #121622;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-active: #38bdf8;
+      --fg: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-purple: #a855f7;
+      --accent-emerald: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Top Command Header */
+    .hub-header {
+      background: var(--panel);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      z-index: 50;
+    }
+    .hub-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hub-badge {
+      background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+      color: #000;
+      font-weight: 800;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .hub-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Concept Selector Pills */
+    .concept-nav {
+      display: flex;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 4px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      gap: 4px;
+    }
+    .concept-btn {
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .concept-btn:hover { color: #fff; }
+    .concept-btn.active {
+      background: #202738;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .concept-btn.active .dot {
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #475569;
+    }
+
+    /* Viewport Sizer Controls */
+    .viewport-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .vp-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .vp-btn:hover { border-color: rgba(255, 255, 255, 0.2); color: #fff; }
+    .vp-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .open-ext {
+      background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+      color: #07090e;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Concept Info Banner */
+    .info-banner {
+      background: #0e111a;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+    }
+    .info-badge {
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+
+    /* Main Preview Stage */
+    .preview-stage {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #07080d;
+      padding: 16px;
+      position: relative;
+    }
+    .frame-container {
+      width: 100%;
+      height: 100%;
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s ease;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 1px rgba(255, 255, 255, 0.2);
+      position: relative;
+    }
+    .frame-container.tablet {
+      width: 768px;
+      height: 95%;
+      border: 8px solid #1a202c;
+      border-radius: 24px;
+    }
+    .frame-container.mobile {
+      width: 390px;
+      height: 95%;
+      border: 10px solid #1a202c;
+      border-radius: 36px;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #07090e;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Hub Control Header -->
+  <header class="hub-header">
+    <div class="hub-brand">
+      <span class="hub-badge">PORTFOLIO LAB</span>
+      <div>
+        <div class="hub-title">Everton Soares · Mocks Conceituais</div>
+      </div>
+    </div>
+
+    <!-- Switcher Pills -->
+    <nav class="concept-nav">
+      <button class="concept-btn active" onclick="loadConcept(1, this)">
+        <span class="dot"></span>
+        <span>Mock 1: Apex Bento Glass</span>
+      </button>
+      <button class="concept-btn" onclick="loadConcept(2, this)">
+        <span class="dot"></span>
+        <span>Mock 2: Executive Minimalist</span>
+      </button>
+      <button class="concept-btn" onclick="loadConcept(3, this)">
+        <span class="dot"></span>
+        <span>Mock 3: Dev Cockpit</span>
+      </button>
+    </nav>
+
+    <!-- Viewport Resizers & Open External -->
+    <div class="viewport-controls">
+      <button class="vp-btn active" onclick="setViewport('desktop', this)">Desktop 100%</button>
+      <button class="vp-btn" onclick="setViewport('tablet', this)">Tablet (768px)</button>
+      <button class="vp-btn" onclick="setViewport('mobile', this)">Mobile (390px)</button>
+      <a id="ext-link" href="concept-1-bento.html" target="_blank" class="open-ext">
+        <span>Abrir em Aba Cheia ↗</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Info Banner about Selected Concept -->
+  <div class="info-banner" id="info-banner">
+    <div>
+      <span class="info-badge" id="info-title">Mock 1: Apex Bento Dark Glass</span> — 
+      <span id="info-desc">Estilo moderno tech (Vercel / Linear / Raycast). Cards com efeito de vidro fosco, glow sutil em ciano e violeta, badges luminosos e navbar flutuante com blur.</span>
+    </div>
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent-emerald);">
+      ✓ Zero alterações no código original
+    </div>
+  </div>
+
+  <!-- Stage Area with Iframe -->
+  <main class="preview-stage">
+    <div class="frame-container" id="frame-box">
+      <iframe id="mock-frame" src="concept-1-bento.html" title="Visualizador de Mock"></iframe>
+    </div>
+  </main>
+
+  <script>
+    const concepts = {
+      1: {
+        file: 'concept-1-bento.html',
+        title: 'Mock 1: Apex Bento Dark Glass (Linear & Vercel Style)',
+        desc: 'Estilo moderno tech. Cards com efeito de vidro fosco, glow sutil em ciano e violeta, badges luminosos pulsantes e navbar flutuante com blur.'
+      },
+      2: {
+        file: 'concept-2-executive.html',
+        title: 'Mock 2: Executive Minimalist (Stripe Press & Swiss Tech)',
+        desc: 'Elegância e autoridade para clientes internacionais. Tipografia nobre, linhas de alta precisão, foco na narrativa de confiabilidade aeronáutica e case studies detalhados.'
+      },
+      3: {
+        file: 'concept-3-cockpit.html',
+        title: 'Mock 3: Dev Cockpit / Flight Deck (Zed IDE & Mission Control)',
+        desc: 'Visual de central de comando avançada, inspirado no projeto Focus Cockpit e na manutenção de aviões. Abas ativas, inspector de sistemas e terminal interativo.'
+      }
+    };
+
+    let currentConcept = 1;
+
+    function loadConcept(id, btn) {
+      currentConcept = id;
+      document.querySelectorAll('.concept-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const data = concepts[id];
+      document.getElementById('mock-frame').src = data.file;
+      document.getElementById('ext-link').href = data.file;
+      document.getElementById('info-title').textContent = data.title;
+      document.getElementById('info-desc').textContent = data.desc;
+    }
+
+    function setViewport(size, btn) {
+      document.querySelectorAll('.vp-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const box = document.getElementById('frame-box');
+      box.className = 'frame-container';
+      if (size === 'tablet') box.classList.add('tablet');
+      if (size === 'mobile') box.classList.add('mobile');
+    }
+  </script>
+</body>
+</html>
