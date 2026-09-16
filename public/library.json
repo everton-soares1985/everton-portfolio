@@ -1,0 +1,444 @@
+{
+  "source": "Sanitized snapshot from Focus Cockpit",
+  "snapshotDate": "2026-09-15",
+  "books": [
+    {
+      "title": "AI-Agents-in-Depth-Bojie-Li-v1.2",
+      "author": "Bojie-Li",
+      "status": "reading"
+    },
+    {
+      "title": "23 Hábitos Anti Procrastinação",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "52 Maneiras de Ganhar Mais Dinheiro",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "A Arte da Meditação",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "A Lógica do Cisne Negro",
+      "author": "Nassim Nicholas Taleb",
+      "status": "read"
+    },
+    {
+      "title": "A Matriz Divina",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "A Revolução 80/20",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "A Tríade do Tempo",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "A Única Coisa",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Antifrágil",
+      "author": "Nassim Nicholas Taleb",
+      "status": "read",
+      "cover": "assets/book-antifragile.jpg",
+      "ref": "https://openlibrary.org/works/OL16726829W"
+    },
+    {
+      "title": "Arriscando a Própria Pele",
+      "author": "Nassim Nicholas Taleb",
+      "status": "read"
+    },
+    {
+      "title": "As 16 Leis do Sucesso",
+      "author": "Napoleon Hill",
+      "status": "read"
+    },
+    {
+      "title": "As 48 Leis do Poder",
+      "author": "Robert Greene",
+      "status": "read"
+    },
+    {
+      "title": "As Armas da Persuasão",
+      "author": "Robert Cialdini",
+      "status": "read"
+    },
+    {
+      "title": "Axiomas de Zurique",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Brasileiro Pocotó",
+      "author": "Luciano Pires",
+      "status": "read"
+    },
+    {
+      "title": "Buick",
+      "author": "Stephen King",
+      "status": "read"
+    },
+    {
+      "title": "Como Fazer Amigos e Influenciar Pessoas na Era Digital",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Como Organizar Sua Vida Financeira",
+      "author": "Gustavo Cerbasi",
+      "status": "read"
+    },
+    {
+      "title": "Como se Aposentar com 40 Anos",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Como Ter a Memória Superpoderosa",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Controle de Risco",
+      "author": "Stormer",
+      "status": "read"
+    },
+    {
+      "title": "Crash",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Dar e Receber",
+      "author": "Adam Grant",
+      "status": "read",
+      "cover": "assets/book-give-take.jpg",
+      "ref": "https://openlibrary.org/works/OL17312332W"
+    },
+    {
+      "title": "Deep Work",
+      "author": "Cal Newport",
+      "status": "read",
+      "cover": "assets/book-deep-work.jpg",
+      "ref": "https://openlibrary.org/works/OL17713267W"
+    },
+    {
+      "title": "Desperte seu Gigante Interior",
+      "author": "Tony Robbins",
+      "status": "read"
+    },
+    {
+      "title": "Dieta das 8 Horas",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Dieta do Metabolismo Rápido",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Do Mil ao Milhão",
+      "author": "Thiago Nigro",
+      "status": "read"
+    },
+    {
+      "title": "Ferramentas dos Titãs",
+      "author": "Tim Ferriss",
+      "status": "read"
+    },
+    {
+      "title": "Free — O Futuro dos Preços",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Guia para Investidor — IR",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Guia Prático para Independência Financeira",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Inteligência Emocional",
+      "author": "Daniel Goleman",
+      "status": "read"
+    },
+    {
+      "title": "Investimentos Inteligentes",
+      "author": "Gustavo Cerbasi",
+      "status": "read"
+    },
+    {
+      "title": "Kafka para Sobrecarregados",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Maestria",
+      "author": "Robert Greene",
+      "status": "read"
+    },
+    {
+      "title": "Matemática Básica para Economistas",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Mindfulness: Atenção Plena",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "O Cérebro de Buda",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "O Homem Mais Rico da Babilônia",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "O Investidor Inteligente",
+      "author": "Benjamin Graham",
+      "status": "read"
+    },
+    {
+      "title": "O Mentalista",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "O Poder do Tempo Livre",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "O Poder dos Dividendos",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Os Analetos",
+      "author": "Confúcio",
+      "status": "read"
+    },
+    {
+      "title": "Outliers",
+      "author": "Malcolm Gladwell",
+      "status": "read"
+    },
+    {
+      "title": "Pai Rico, Pai Pobre",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Poder Sem Limites",
+      "author": "Tony Robbins",
+      "status": "read"
+    },
+    {
+      "title": "Por que as Nações Fracassam",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Pré-Suasão",
+      "author": "Robert Cialdini",
+      "status": "read"
+    },
+    {
+      "title": "Quem Pensa Enriquece",
+      "author": "Napoleon Hill",
+      "status": "read"
+    },
+    {
+      "title": "Sociedades Secretas",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Steve Jobs",
+      "author": "Walter Isaacson",
+      "status": "read",
+      "cover": "assets/book-steve-jobs.jpg",
+      "ref": "https://openlibrary.org/works/OL16085155W"
+    },
+    {
+      "title": "The Circadian Code",
+      "author": "Satchin Panda",
+      "status": "read"
+    },
+    {
+      "title": "Tiranos",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Trabalhe 4 Horas por Semana",
+      "author": "Tim Ferriss",
+      "status": "read"
+    },
+    {
+      "title": "Trading in the Zone",
+      "author": "Mark Douglas",
+      "status": "read"
+    },
+    {
+      "title": "A Estratégia da Genialidade",
+      "author": "Robert B. Dilts",
+      "status": "planned"
+    },
+    {
+      "title": "A Fórmula Mágica",
+      "author": "Joel Greenblatt",
+      "status": "read"
+    },
+    {
+      "title": "A Revolta de Atlas",
+      "author": "Ayn Rand",
+      "status": "planned"
+    },
+    {
+      "title": "Análise de Investimentos e Aplicações Financeiras",
+      "author": "Marco Antonio",
+      "status": "planned"
+    },
+    {
+      "title": "Análise Técnica dos Mercados",
+      "author": "Flávio Lemos",
+      "status": "read"
+    },
+    {
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "status": "read"
+    },
+    {
+      "title": "Bilionários",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Bollinger on Bollinger Bands",
+      "author": "John Bollinger",
+      "status": "read"
+    },
+    {
+      "title": "Código de um Cavaleiro",
+      "author": "Ethan Hawke",
+      "status": "read"
+    },
+    {
+      "title": "Em Busca de Sentido",
+      "author": "Viktor E. Frankl",
+      "status": "planned"
+    },
+    {
+      "title": "Factfulness",
+      "author": "Hans Rosling",
+      "status": "planned"
+    },
+    {
+      "title": "Homo Deus",
+      "author": "Yuval Noah Harari",
+      "status": "planned"
+    },
+    {
+      "title": "Pomodoro — Técnica de Gestão do Tempo",
+      "author": "",
+      "status": "read"
+    },
+    {
+      "title": "Ponerologia: Psicopatas no Poder",
+      "author": "Andrew M. Łobaczewski",
+      "status": "planned"
+    },
+    {
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "status": "planned"
+    },
+    {
+      "title": "Setups baseados em Médias Móveis",
+      "author": "Leandro & Stormer",
+      "status": "read"
+    },
+    {
+      "title": "Setups baseados em Osciladores",
+      "author": "Leandro & Stormer",
+      "status": "read"
+    },
+    {
+      "title": "Setups baseados na Banda de Bollinger",
+      "author": "Leandro & Stormer",
+      "status": "read"
+    },
+    {
+      "title": "Setups baseados na Volatilidade Histórica",
+      "author": "Leandro & Stormer",
+      "status": "read"
+    },
+    {
+      "title": "Setups baseados no Ponto de Pivot, HiLo e outros",
+      "author": "Leandro & Stormer",
+      "status": "read"
+    },
+    {
+      "title": "Setups Puros",
+      "author": "Leandro & Stormer",
+      "status": "read"
+    },
+    {
+      "title": "Setups utilizando Indicadores Associados",
+      "author": "Leandro & Stormer",
+      "status": "read"
+    },
+    {
+      "title": "Social Engineering — The Science of Human Hacking",
+      "author": "",
+      "status": "planned"
+    },
+    {
+      "title": "Steal Like an Artist",
+      "author": "Austin Kleon",
+      "status": "planned"
+    },
+    {
+      "title": "Trading Strategies",
+      "author": "Robert Pardo",
+      "status": "read"
+    },
+    {
+      "title": "Trading the Markets: The Point and Figure Way",
+      "author": "",
+      "status": "planned"
+    },
+    {
+      "title": "Trend Following",
+      "author": "Michael Covel",
+      "status": "read"
+    },
+    {
+      "title": "Van Tharp’s Definitive Guide to Position Sizing",
+      "author": "Van K. Tharp",
+      "status": "read"
+    }
+  ]
+}

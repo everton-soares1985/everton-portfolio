@@ -1,83 +1,85 @@
-# Everton Soares
+# Everton Soares Portfolio
 
-Portfolio PT/EN com temas grafite/vermelhao e bege/violeta, projetos, formacao,
-biblioteca, curriculos, trajetoria e terminal local. Preview ainda nao publicado.
+Portfolio pessoal PT/EN para apresentar projetos de automacao, IA aplicada e
+engenharia de software. A interface ativa usa a identidade Signal / Build, com
+modo escuro grafite e modo claro bege, acentos azuis e violetas.
 
-## Rodar
+## Executar
 
-Node.js 22+: `npm start`, http://127.0.0.1:4317. Sem build ou instalacao adicional.
-`npm test` executa 13 testes offline de logica e HTTP, sem provedores reais.
+Requer Node.js 22 ou superior. Nao ha etapa de build nem instalacao adicional.
 
-A interface nao utiliza IA nem precisa de SSH, OmniRoute, Hermes ou VPS.
-O endpoint antigo /api/explore responde 410 por padrao. A implementacao legada
-foi preservada, mas so funciona com ENABLE_LEGACY_AI_DEMO=true explicitamente.
-Nao habilitar essa opcao para esta versao. Nenhum arquivo env foi alterado.
+```powershell
+npm start
+```
 
-## Mapa
+Preview local: `http://127.0.0.1:4317/`
 
-- public/app.js: idioma, navegacao, filtros e dialogos do catalogo.
-- public/studio.js: paginas de projetos, curriculos e calendario GitHub.
-- public/presentation.js: inicio, Sobre, video e terminal deterministico.
-- public/demonstration.js: logica legada, nao exibida nesta interface.
-- public/style.css: estilos antigos preservados, nao carregados.
-- public/studio.css: identidade visual e componentes da nova versao.
-- public/catalog.json: fonte publica selecionada; nao sincroniza bancos privados.
-- public/github-activity.json: snapshot real de reserva, com datas do periodo.
-- public/downloads/: copias publicas dos PDFs existentes PT/EN.
-- tests/studio.test.mjs: demonstracao, dados GitHub, PDFs e bloqueio de IA.
-- tests/browser.mjs: smoke test com Edge/Playwright; PLAYWRIGHT_MODULE aponta
-  para a instalacao disponivel. Suite em tests/presentation-browser.mjs.
-  Capturas em artifacts/approved-design/, fora do Git.
+```powershell
+npm test
+```
 
-## Comportamento
+A suite executa 22 testes offline de logica, HTTP e navegador. Ela valida as
+rotas principais em 320, 390 e 1440 px, os dois temas, PT/EN, carrosseis,
+curriculos de cursos, videos, contribuicoes GitHub e contatos.
 
-Projetos possuem enderecos #project/focus, #project/radar e demais IDs do catalogo.
-As duas primeiras imagens sao capturas existentes com dados demonstrativos.
-Projetos sem captura usam um fluxo conceitual identificado, nao interface falsa.
-O video existente do Radar abre no YouTube; nao foram inventados novos videos.
+## Estrutura ativa
 
-O laboratorio JSON foi retirado da interface; #lab redireciona para videos.
-O terminal tem pagina propria com saidas do catalogo, links, historico e
-autocompletar. Nao executa shell, nao chama IA e nao acessa arquivos pessoais.
-Sobre apresenta a foto e etapas expansiveis, separando emprego e projetos proprios.
-Tema inicial escuro; a preferencia de tema fica salva no navegador.
+- `public/index.html`: estrutura do shell, navegacao e contatos publicos.
+- `public/app.js`: conteudo, rotas, idioma, projetos, cursos e biblioteca.
+- `public/signal.css`: identidade visual, responsividade e animacoes.
+- `public/library.json`: snapshot publico e sanitizado dos 86 livros do Focus Cockpit.
+- `public/catalog.json`: catalogo publico de projetos e links.
+- `public/github-activity.json`: snapshot de reserva das contribuicoes GitHub.
+- `public/assets/focus-cockpit-demo.mp4`: demonstracao final do Focus Cockpit.
+- `public/assets/global-builder-radar-demo.mp4`: demonstracao do Global Builder Radar.
+- `public/assets/github-project-publisher-demo.mp4`: demonstracao montada do GitHub Project Publisher.
+- `public/assets/hermes-autonomous-builder-demo.mp4`: visualizacao da arquitetura V0 do Hermes.
+- `public/downloads/`: curriculos publicos PT/EN.
+- `tests/presentation-browser.mjs`: regressao visual e funcional da interface ativa.
 
-GitHub: https://github-contributions-api.jogruber.de/v4/everton-soares1985?y=last
-API publica intermediaria, sem token. Cache de seis horas no navegador; em falha,
-exibe snapshot salvo e aviso. Nao promete refletir um commit imediatamente.
-Cada celula tem data e contagem; no celular, inicia no trecho mais recente.
+Os arquivos `studio.js`, `studio.css`, `presentation.js` e outros shells legados
+continuam preservados, mas nao sao carregados pela pagina principal.
 
-## Conteudo e direitos
+## Recursos
 
-Os PDFs foram copiados, sem alterar conteudo:
-- PT: ASSISTENTE_PESSOAL/EMPREGOS_PORTFOLIO/01_KIT_ENVIO_RAPIDO/
-  Curriculo_Everton_Soares_Dev_IA_Automacao.pdf
-- EN: Agencia_Growth_Tech/career_documents/pdf/
-  Everton_Soares_AI_Workflow_Automation_EN.pdf
+- Pagina inicial limpa, com navegacao por rotas hash.
+- Projetos alternados, previews em video no hover e detalhes com video e galeria.
+- Focus Cockpit com o video final e capturas reais do produto.
+- GitHub Project Publisher com video demonstrativo e terminal tecnico preservado.
+- Hermes Autonomous Builder como case documental de arquitetura agentic, com limites explicitados.
+- Biblioteca em tres carrosseis: 1 lendo, 74 concluidos e 11 planejados.
+- Cursos agrupados por estado; cada curso pode expandir seus modulos e credencial.
+- Linhas de fluxo com brilho continuo e alternativa sem movimento.
+- Sobre com retrato e trajetoria expansivel.
+- Calendario GitHub atualizado por API publica, com snapshot local de reserva.
+- Curriculos PT/EN para download.
 
-Revisar curriculos antes da publicacao: os documentos existentes podem divergir
-do catalogo mais recente (inclusive estado de cursos). Nenhuma nova conquista,
-experiencia profissional, reflexao de livro ou resultado comercial foi inventado.
+O portfolio nao usa IA em tempo real e nao depende de VPS, SSH, OmniRoute ou
+Hermes. O endpoint legado `/api/explore` permanece desabilitado por padrao.
 
-Cursos sem credencial publicada nao recebem selo de certificacao.
-Biblioteca implementada em CSS, sem nova biblioteca pesada ou dependencia React.
-Capas existentes podem corresponder a outra edicao; livros sem imagem usam titulo
-e autor. Fontes Inter e Manrope hospedadas localmente, licencas OFL em assets/.
-Icones Lucide e sua licenca existentes foram preservados.
-Referencias visuais inspiraram organizacao, sem copiar codigo ou assets dos sites.
+## Dados e privacidade
 
-## Verificacao e rollback
+`public/library.json` contem somente titulo, autor, status e referencias publicas
+de capa quando existentes. IDs internos, caminhos locais, notas e outros campos
+privados do Focus Cockpit nao foram publicados.
 
-13 testes unitarios/HTTP aprovados. Sete rotas em 320, 390 e 1440 px, claro/escuro,
-biblioteca, detalhes de projetos, terminal, dados invalidos, escaping e downloads
-dos dois PDFs verificados com Edge. Zero chamadas ao endpoint de IA e erros JS.
+O conteudo de cursos foi consolidado a partir de `CURRIUCLO.txt`. Cursos sem link
+de credencial nao exibem um link inventado. Resultados comerciais, formacao,
+experiencia profissional e funcionalidades de produto nao devem ser apresentados
+sem fonte verificavel.
 
-Backup seletivo: artifacts/backups/2026-09-12-visual. Nenhum arquivo original
-de carreira foi movido ou apagado; nenhum commit/push ou servico VPS alterado.
+O curriculo ingles publico corresponde a `Everton_De_Oliveira_Soares_Resume.pdf`,
+fornecido em 15 de setembro de 2026. A copia anterior foi preservada somente no
+backup local fora da publicacao.
+
+## Verificacao
+
+As capturas da ultima auditoria ficam em `artifacts/final-2026-09-15/`, incluindo
+desktop e mobile nos modos escuro e claro e um curso com curriculo expandido.
+O deploy estatico e validado separadamente antes da publicacao no dominio.
 
 ## Publicacao
 
-A pasta public/ pode ser hospedada estaticamente na HostGator. Consulte
-deploy/README.md como referencia da infraestrutura anterior; a API Oracle nao
-e mais necessaria para esta interface. Nao enviar env, backups ou arquivos server.
-Dominio e SSL nao foram configurados/publicados nesta rodada.
+A pasta `public/` pode ser hospedada estaticamente. Consulte `deploy/README.md`
+para o historico da infraestrutura. Segredos, `.env`, backups, bancos locais e
+arquivos de servidor nao devem ser publicados.

@@ -1,20 +1,284 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Everton Soares. Projetos de IA aplicada, automacao e software. Portfolio, biblioteca e aprendizado continuo.">
-  <meta name="theme-color" content="#151817">
-  <title>Everton Soares | IA e automação</title>
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/studio.css">
-  <link rel="preload" href="/assets/inter.ttf" as="font" type="font/ttf" crossorigin>
-  <script src="/theme.js"></script>
-  <script defer src="/assets/lucide.min.js"></script>
-  <script type="module" src="/app.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Everton Soares | Automação, IA aplicada e software</title>
+<meta name="description" content="Portfólio de Everton Soares: automação especializada, IA aplicada, Python, agentes, RAG e desenvolvimento de software.">
+<link rel="canonical" href="https://everton.growthtech.solutions/">
+<meta name="theme-color" content="#101114">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://everton.growthtech.solutions/">
+<meta property="og:title" content="Everton Soares | Automation, Applied AI &amp; Software">
+<meta property="og:description" content="Public projects in specialized automation, applied AI, Python, agentic systems and software development.">
+<meta property="og:image" content="https://everton.growthtech.solutions/assets/hermes-autonomous-builder-poster.webp">
+<meta property="og:image:alt" content="Hermes Autonomous Builder architecture visualization">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/manrope.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/assets/inter.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/signal.css">
 </head>
 <body>
-  <a class="skip" href="#main">Ir ao conteúdo / Skip to content</a>
-  <div id="app"><main class="loading"><h1>Everton Soares</h1><p>Carregando portfólio / Loading portfolio…</p></main></div>
-  <noscript><p>Everton Soares · <a href="https://github.com/everton-soares1985">GitHub</a> · <a href="/downloads/Everton-Soares-PT.pdf" download>Currículo PT</a> · <a href="/downloads/Everton-Soares-EN.pdf" download>Resume EN</a></p></noscript>
+<a class="skip-link" href="#main" data-i18n="skip">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#home" class="brand" aria-label="Everton Soares — home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>EVERTON&nbsp;SOARES</span>
+    </a>
+    <button class="tool-btn nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Menu">
+      <i data-lucide="menu"></i>
+    </button>
+    <nav class="main-nav" id="mainNav" aria-label="Main">
+      <a href="#home" data-route="home" data-i18n="nav.home">Início</a>
+      <a href="#projects" data-route="projects" data-i18n="nav.projects">Projetos</a>
+      <a href="#about" data-route="about" data-i18n="nav.about">Sobre</a>
+      <a href="#education" data-route="education" data-i18n="nav.education">Formação</a>
+      <a href="#library" data-route="library" data-i18n="nav.library">Biblioteca</a>
+      <a href="#contact" data-route="contact" data-i18n="nav.contact">Contato</a>
+    </nav>
+    <div class="header-tools">
+      <button class="tool-btn" id="langToggle" aria-label="Switch language">EN</button>
+      <button class="tool-btn" id="themeToggle" aria-label="Toggle theme">
+        <i data-lucide="sun-medium" id="themeIcon"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HOME ============ -->
+<section class="view" id="view-home" data-view="home">
+  <div class="wrap">
+    <div class="hero">
+      <span class="hero-eyebrow"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.status">Disponível para posições em IA, automação e software · Remoto / São Paulo</span></span>
+      <h1>Everton<br>Soares<span class="sig">.</span></h1>
+      <p class="hero-role" data-i18n="hero.role">Automação especializada · IA aplicada · Desenvolvimento de software</p>
+      <p class="hero-bio" data-i18n="hero.bio">Desenvolvo ferramentas em Python, agentes e aplicações local-first que transformam operações fragmentadas em fluxos claros, testáveis e operáveis.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects"><i data-lucide="layers"></i><span data-i18n="hero.cta.projects">Ver projetos</span></a>
+        <a class="btn btn-ghost" id="resumeBtn" href="/downloads/Everton-Soares-PT.pdf" target="_blank" rel="noopener"><i data-lucide="file-text"></i><span data-i18n="hero.cta.resume">Currículo</span></a>
+        <div class="hero-icons">
+          <a class="icon-link" href="https://github.com/everton-soares1985" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/everton-de-oliveira-soares-857630146/?locale=en_US" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <span>Python · LLMs · FastAPI · TypeScript · SQLite</span>
+        <span data-i18n="hero.meta2">Produtos próprios · código público · demonstrações reais</span>
+      </div>
+      <p class="hero-proof"><i data-lucide="github"></i><span data-i18n="hero.proof">As interfaces aqui são demonstrações visuais. O código-fonte, a documentação e os repositórios completos estão no GitHub.</span> <a href="https://github.com/everton-soares1985" target="_blank" rel="noopener" data-i18n="hero.proofLink">Ver GitHub</a></p>
+    </div>
+
+    <div class="featured">
+      <div class="featured-label"><span data-i18n="hero.featured">Projeto em destaque — Global Builder Radar</span></div>
+      <div class="media-frame" id="radarMedia" role="link" tabindex="0" data-i18n-aria="hero.radarAria" aria-label="Global Builder Radar — abrir projeto">
+        <img src="/assets/radar.png" alt="Global Builder Radar dashboard" id="radarPoster">
+        <video id="radarVideo" class="is-hidden" muted loop playsinline preload="none" aria-hidden="true">
+          <source src="/assets/global-builder-radar-demo.mp4" type="video/mp4">
+        </video>
+        <span class="media-badge"><span class="rec" aria-hidden="true"></span><span data-i18n="hero.badge">demo silenciosa · clique para abrir</span></span>
+      </div>
+    </div>
+
+    <div class="rail-section section-rule">
+      <div class="rail-head">
+        <h2 data-i18n="rail.title">Do problema ao sistema</h2>
+        <span class="rail-hint" data-i18n="rail.hint">cinco projetos · automação com evidência · clique para abrir</span>
+      </div>
+      <div class="signal-rail" id="signalRail" role="list">
+        <div class="rail-pulse" id="railPulse" aria-hidden="true"></div>
+        <div class="rail-item" role="listitem" data-project="radar">
+          <a class="rail-link" href="#project/radar">
+            <span class="rail-index">01</span>
+            <span class="rail-name">Global Builder Radar</span>
+            <span class="rail-tag">Python · APIs · Pipeline</span>
+          </a>
+          <p class="rail-desc" data-i18n="rail.radar">Coleta, normaliza, deduplica e prioriza oportunidades para revisão humana.</p>
+        </div>
+        <div class="rail-item" role="listitem" data-project="focus">
+          <a class="rail-link" href="#project/focus">
+            <span class="rail-index">02</span>
+            <span class="rail-name">Focus Cockpit</span>
+            <span class="rail-tag">Tauri · React · SQLite</span>
+          </a>
+          <p class="rail-desc" data-i18n="rail.focus">Concentra prioridades, projetos e aprendizado em um desktop local-first.</p>
+        </div>
+        <div class="rail-item" role="listitem" data-project="maintenance" data-accent="violet">
+          <a class="rail-link" href="#project/maintenance">
+            <span class="rail-index">03</span>
+            <span class="rail-name">Prescriptive Maintenance</span>
+            <span class="rail-tag">Python · RAG · FastAPI</span>
+          </a>
+          <p class="rail-desc" data-i18n="rail.maintenance">Combina similaridade histórica, RAG documental e barreiras de segurança.</p>
+        </div>
+        <div class="rail-item" role="listitem" data-project="publisher">
+          <a class="rail-link" href="#project/publisher">
+            <span class="rail-index">04</span>
+            <span class="rail-name">GitHub Project Publisher</span>
+            <span class="rail-tag">Python · Git · Governance</span>
+          </a>
+          <p class="rail-desc" data-i18n="rail.publisher">Transforma qualidade e segurança de repositórios em verificações reproduzíveis.</p>
+        </div>
+        <div class="rail-item" role="listitem" data-project="hermes" data-accent="violet">
+          <a class="rail-link" href="#project/hermes">
+            <span class="rail-index">05</span>
+            <span class="rail-name">Hermes Autonomous Builder</span>
+            <span class="rail-tag">Agentic AI · Orchestration · Governance</span>
+          </a>
+          <p class="rail-desc" data-i18n="rail.hermes">Separa arquitetura, implementação e revisão antes de permitir DONE.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section-rule" id="homeActivity">
+      <h2 class="section-title activity-title">
+        <span data-i18n="gh.title">Atividade pública no GitHub</span>
+        <span class="gh-status" id="ghStatus"><span class="dot"></span><span id="ghStatusText">…</span></span>
+      </h2>
+      <p class="section-sub" data-i18n="gh.sub">Contribuições do último ano, atualizadas por uma API pública do GitHub.</p>
+      <div class="gh-cal-wrap"><div class="gh-cal" id="ghCal" role="img" aria-label="GitHub contribution calendar"></div></div>
+      <div class="gh-legend"><span data-i18n="gh.less">menos</span><span class="gh-cell"></span><span class="gh-cell l1"></span><span class="gh-cell l2"></span><span class="gh-cell l3"></span><span class="gh-cell l4"></span><span data-i18n="gh.more">mais</span></div>
+      <p class="gh-total" id="ghTotal"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="view" id="view-projects" data-view="projects">
+  <div class="wrap section">
+    <span class="kicker" data-i18n="projects.kicker">Projetos selecionados</span>
+    <h1 class="section-title" data-i18n="projects.title">Sistemas que transformam trabalho complexo em fluxo verificável</h1>
+    <p class="section-sub" data-i18n="projects.sub">Cinco projetos públicos que mostram como penso e construo: aplicações desktop, pipelines de dados, RAG, governança de repositórios e arquitetura de agentes.</p>
+    <div id="projectsList"></div>
+  </div>
+</section>
+
+<!-- ============ PROJECT DETAILS ============ -->
+<section class="view" id="view-project" data-view="project">
+  <div class="wrap" id="projectDetail"></div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="view" id="view-about" data-view="about">
+  <div class="wrap section">
+    <span class="kicker" data-i18n="about.kicker">Sobre</span>
+    <h1 class="section-title" data-i18n="about.title">Experiência operacional virou engenharia de sistemas</h1>
+    <div class="about-grid mt-4">
+      <div>
+        <div class="photo-frame" tabindex="0">
+          <img src="/assets/everton.jpg" alt="Everton Soares">
+          <span class="photo-cap" data-i18n="about.photo">São Paulo, Brasil · passe o cursor para cor</span>
+        </div>
+      </div>
+      <div>
+        <p class="about-intro" data-i18n="about.intro">Minha trajetória passa por formação técnica, mercados financeiros, marketing de performance, comunidades Web3 e automação. Em todas essas áreas, o padrão foi o mesmo: entender o processo, reduzir trabalho repetitivo e criar mecanismos para decidir com mais clareza. Hoje aplico essa experiência na construção de software, agentes e produtos de IA.</p>
+        <div class="honesty-box">
+          <strong data-i18n="about.honesty.h">O que você pode verificar:</strong>
+          <span data-i18n="about.honesty.b">código público, decisões de arquitetura, demonstrações reais e limites documentados. Os projetos são independentes e mostram capacidade de transformar problemas ambíguos em sistemas operáveis.</span>
+        </div>
+        <h2 class="timeline-title" data-i18n="about.timeline">Linha do tempo</h2>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="view" id="view-education" data-view="education">
+  <div class="wrap section">
+    <span class="kicker" data-i18n="edu.kicker">Base técnica em evolução</span>
+    <h1 class="section-title" data-i18n="edu.title">Certificações aplicadas a projetos reais</h1>
+    <p class="section-sub" data-i18n="edu.sub">Uso cursos e certificações para aprofundar fundamentos e, em seguida, transformo o aprendizado em código, arquitetura e demonstrações públicas.</p>
+    <div id="eduGroups"></div>
+  </div>
+</section>
+
+<!-- ============ LIBRARY ============ -->
+<section class="view" id="view-library" data-view="library">
+  <div class="wrap section">
+    <span class="kicker violet" data-i18n="lib.kicker">Biblioteca</span>
+    <h1 class="section-title" data-i18n="lib.title">Leitura como parte do método</h1>
+    <p class="section-sub" data-i18n="lib.sub">Minha biblioteca conecta engenharia, comportamento, estratégia e tomada de decisão — referências que influenciam como projeto sistemas e trabalho.</p>
+    <div id="libGroups"></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="view" id="view-contact" data-view="contact">
+  <div class="wrap section">
+    <span class="kicker" data-i18n="contact.kicker">Contato</span>
+    <h1 class="section-title" data-i18n="contact.title">Vamos construir algo útil</h1>
+    <p class="section-sub" data-i18n="contact.sub">Estou aberto a posições e projetos em automação com IA, sistemas agentic, Python e produtos internos. GitHub e demos mostram como trabalho; os portfólios legados registram minha experiência anterior em marketing, Web3 e mercados.</p>
+    <div class="contact-grid">
+      <div class="contact-group">
+        <h3 data-i18n="contact.primary">Canais profissionais</h3>
+        <ul class="link-list">
+          <li><a class="link-row" href="https://www.linkedin.com/in/everton-de-oliveira-soares-857630146/?locale=en_US" target="_blank" rel="noopener"><i data-lucide="linkedin"></i><span class="lr-label">LinkedIn</span><span class="lr-sub">everton-de-oliveira-soares</span></a></li>
+          <li><a class="link-row" href="https://github.com/everton-soares1985" target="_blank" rel="noopener"><i data-lucide="github"></i><span class="lr-label">GitHub</span><span class="lr-sub">everton-soares1985</span></a></li>
+          <li><a class="link-row" href="https://www.upwork.com/freelancers/~016771dda07fdb3a35" target="_blank" rel="noopener"><i data-lucide="briefcase"></i><span class="lr-label">Upwork</span><span class="lr-sub">freelancer</span></a></li>
+          <li><a class="link-row" href="/downloads/Everton-Soares-EN.pdf" target="_blank" rel="noopener"><i data-lucide="file-text"></i><span class="lr-label" data-i18n="contact.resumeEn">Currículo (EN)</span><span class="lr-sub">PDF</span></a></li>
+          <li><a class="link-row" href="/downloads/Everton-Soares-PT.pdf" target="_blank" rel="noopener"><i data-lucide="file-text"></i><span class="lr-label" data-i18n="contact.resumePt">Currículo (PT)</span><span class="lr-sub">PDF</span></a></li>
+        </ul>
+      </div>
+      <div class="contact-group secondary">
+        <h3 data-i18n="contact.secondary">Histórico e conteúdo</h3>
+        <ul class="link-list">
+          <li><a class="link-row" href="https://www.youtube.com/@GrowthTech.Solutions" target="_blank" rel="noopener"><i data-lucide="youtube"></i><span class="lr-label">GrowthTech</span><span class="lr-sub">YouTube</span></a></li>
+          <li><a class="link-row" href="https://www.youtube.com/@CryptoFrontierWeb3" target="_blank" rel="noopener"><i data-lucide="youtube"></i><span class="lr-label">Crypto Frontier</span><span class="lr-sub">YouTube · Web3</span></a></li>
+          <li><a class="link-row" href="https://www.instagram.com/evertondeoliveirasoares1232/" target="_blank" rel="noopener"><i data-lucide="instagram"></i><span class="lr-label">Instagram</span><span class="lr-sub">evertondeoliveirasoares1232</span></a></li>
+          <li><a class="link-row" href="https://evertonsoaresmkt.framer.website/" target="_blank" rel="noopener"><i data-lucide="globe"></i><span class="lr-label" data-i18n="contact.mkt">Marketing e Web3</span><span class="lr-sub">portfólio legado</span></a></li>
+          <li><a class="link-row" href="https://sites.google.com/view/evertonsoarestrader" target="_blank" rel="noopener"><i data-lucide="line-chart"></i><span class="lr-label" data-i18n="contact.fin">Mercados e finanças</span><span class="lr-sub">portfólio legado</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TERMINAL ============ -->
+<section class="view" id="view-terminal" data-view="terminal">
+  <div class="wrap section">
+    <span class="kicker" data-i18n="term.kicker">Rota alternativa</span>
+    <h1 class="section-title" data-i18n="term.title">Terminal</h1>
+    <p class="section-sub" data-i18n="term.sub">Navegue pelo portfólio como uma interface de linha de comando. Os comandos são locais, determinísticos e não executam ações externas — digite <code>help</code>.</p>
+    <div class="term-shell">
+      <div class="term-bar"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span><span class="term-label">signal — readonly session</span></div>
+      <div class="term-screen" id="termScreen" aria-live="polite"></div>
+      <form class="term-input-row" id="termForm">
+        <span class="prompt">everton@signal:~$</span>
+        <input type="text" id="termInput" autocomplete="off" spellcheck="false" aria-label="Terminal input">
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="f-sig">SIGNAL / BUILD — © 2026 Everton Soares</span>
+    <div class="f-links">
+      <a href="#terminal" data-i18n="footer.terminal">terminal</a>
+      <a href="https://github.com/everton-soares1985" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/everton-de-oliveira-soares-857630146/?locale=en_US" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <img id="lightboxImg" src="" alt="">
+  <span class="lightbox-cap" id="lightboxCap"></span>
+  <div class="lightbox-bar">
+    <button id="lbPrev" aria-label="Previous">←</button>
+    <button id="lbClose" aria-label="Close" data-i18n="lb.close">Fechar</button>
+    <button id="lbNext" aria-label="Next">→</button>
+  </div>
+</div>
+
+<script defer src="/assets/lucide.min.js"></script>
+<script type="module" src="/app.js"></script>
 </body>
 </html>
