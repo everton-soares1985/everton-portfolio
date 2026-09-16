@@ -1,58 +1,515 @@
 {
-  "updated":"2026-09-11",
+  "updated": "2026-09-16",
   "profile": {
-    "name":"Everton Soares",
-    "role":{"pt":"IA aplicada, automação e software","en":"Applied AI, automation & software"},
-    "bio":{"pt":"Construo ferramentas para organizar o trabalho, conectar sistemas e transformar informação em ação. Python, integrações com IA e projetos local-first, com atenção à confiabilidade.","en":"I build tools to organize work, connect systems and turn information into action. Python, AI integrations and local-first projects, with a focus on reliability."},
-    "location":{"pt":"São Paulo, Brasil","en":"São Paulo, Brazil"},
-    "github":"https://github.com/everton-soares1985",
-    "linkedin":"https://www.linkedin.com/in/everton-de-oliveira-soares-857630146/",
-    "upwork":"https://www.upwork.com/freelancers/~016771dda07fdb3a35",
-    "youtube":"https://www.youtube.com/@GrowthTech.Solutions"
+    "name": "Everton Soares",
+    "role": {
+      "pt": "Automação especializada · IA aplicada · Desenvolvimento de software",
+      "en": "Specialized Automation · Applied AI · Software Development"
+    },
+    "bio": {
+      "pt": "Transformo operações fragmentadas em software que pessoas conseguem entender, testar e operar. Construo automações, agentes e produtos local-first com limites, evidências e revisão humana.",
+      "en": "I turn fragmented operations into software people can understand, test and operate. I build automations, agents and local-first products with boundaries, evidence and human review."
+    },
+    "location": {
+      "pt": "São Paulo, Brasil",
+      "en": "São Paulo, Brazil"
+    },
+    "github": "https://github.com/everton-soares1985",
+    "linkedin": "https://www.linkedin.com/in/everton-de-oliveira-soares-857630146/?locale=en_US",
+    "upwork": "https://www.upwork.com/freelancers/~016771dda07fdb3a35",
+    "youtube": "https://www.youtube.com/@GrowthTech.Solutions",
+    "youtubeWeb3": "https://www.youtube.com/@CryptoFrontierWeb3",
+    "instagram": "https://www.instagram.com/evertondeoliveirasoares1232/",
+    "linktree": "https://linktr.ee/evertonsoarestrader",
+    "marketingPortfolio": "https://evertonsoaresmkt.framer.website/",
+    "financePortfolio": "https://sites.google.com/view/evertonsoarestrader"
   },
-  "projects":[
-    {"id":"focus","name":"Focus Cockpit","category":"software","image":"/assets/focus.png","tags":["Tauri","React","SQLite"],"goals":["organize","journey"],"url":"https://github.com/everton-soares1985/focus-cockpit",
-      "summary":{"pt":"Prioridades, projetos e aprendizado em um espaço pessoal de trabalho.","en":"Priorities, projects and learning in a personal workspace."},
-      "problem":{"pt":"Informações e próximos passos espalhados entre ferramentas e arquivos.","en":"Information and next actions scattered across tools and files."},
-      "approach":{"pt":"Uma aplicação desktop local-first com áreas de foco, projetos, cursos e documentos.","en":"A local-first desktop application with focus, project, course and document views."},
-      "limit":{"pt":"Projeto pessoal. Não representa uma implantação empresarial ou resultados de clientes.","en":"Personal project. It does not represent an enterprise deployment or client results."}},
-    {"id":"radar","name":"Global Builder Radar","category":"automation","image":"/assets/radar.png","tags":["Python","APIs","Pipeline"],"goals":["automate","organize"],"url":"https://github.com/everton-soares1985/global-builder-opportunity-radar","video":"https://www.youtube.com/watch?v=rKfwS7Cktoo",
-      "summary":{"pt":"Organização e análise de oportunidades para construir software.","en":"Organizing and analyzing opportunities to build software."},
-      "problem":{"pt":"Encontrar sinais úteis em informações distribuídas e reduzir pesquisa repetitiva.","en":"Finding useful signals in distributed information and reducing repetitive research."},
-      "approach":{"pt":"Um pipeline para reunir e organizar oportunidades, com uma interface para consulta.","en":"A pipeline to collect and organize opportunities, with an interface for review."},
-      "limit":{"pt":"Os sinais precisam de avaliação humana. O projeto não garante demanda ou retorno financeiro.","en":"Signals require human assessment. The project does not guarantee demand or financial returns."}},
-    {"id":"maintenance","name":"Prescriptive Maintenance","category":"ai","tags":["Python","RAG","FastAPI"],"goals":["documents","journey"],"url":"https://github.com/everton-soares1985/prescriptive-maintenance-platform",
-      "summary":{"pt":"Exploração de IA aplicada ao conhecimento de manutenção.","en":"Exploring AI applied to maintenance knowledge."},
-      "problem":{"pt":"Consultar conhecimento técnico de manutenção de forma contextualizada.","en":"Consulting technical maintenance knowledge in context."},
-      "approach":{"pt":"Projeto demonstrativo com recuperação de informações e interface para consulta de documentos.","en":"A demonstration project with information retrieval and a document-query interface."},
-      "limit":{"pt":"Demonstração, não sistema industrial de produção. Não substitui manuais, inspeções ou profissionais habilitados.","en":"A demonstration, not an industrial production system. It does not replace manuals, inspections or qualified professionals."}},
-    {"id":"publisher","name":"GitHub Project Publisher","category":"automation","tags":["Python","Git","Governance"],"goals":["automate","journey"],"url":"https://github.com/everton-soares1985/github-project-publisher",
-      "summary":{"pt":"Preparação e revisão de repositórios para publicação organizada.","en":"Preparing and reviewing repositories for organized publication."},
-      "problem":{"pt":"Publicar projetos com documentação coerente sem expor arquivos privados.","en":"Publishing projects with coherent documentation without exposing private files."},
-      "approach":{"pt":"Um fluxo de revisão, padronização e verificações antes da publicação.","en":"A workflow of review, standardization and pre-publication checks."},
-      "limit":{"pt":"A revisão humana continua necessária antes de publicar qualquer repositório.","en":"Human review is still required before publishing any repository."}}
+  "projects": [
+    {
+      "id": "focus",
+      "name": "Focus Cockpit",
+      "category": "software",
+      "image": "/assets/focus.png",
+      "localVideo": "/assets/focus-cockpit-demo.mp4",
+      "tags": [
+        "Tauri",
+        "React",
+        "SQLite"
+      ],
+      "goals": [
+        "organize",
+        "journey"
+      ],
+      "url": "https://github.com/everton-soares1985/focus-cockpit",
+      "summary": {
+        "pt": "Aplicação desktop local-first que reúne prioridades, projetos, aprendizado, credenciais e atalhos de arquivos em um único cockpit pessoal.",
+        "en": "A local-first desktop application that brings priorities, projects, learning, credentials and file shortcuts into one personal cockpit."
+      },
+      "problem": {
+        "pt": "Prioridades e próximos passos se perdem quando planejamento, cursos, credenciais e arquivos vivem em ferramentas diferentes.",
+        "en": "Priorities and next actions get lost when planning, courses, credentials and files live across separate tools."
+      },
+      "approach": {
+        "pt": "Aplicação privada por design, com dados em SQLite, áreas operacionais conectadas e acesso explícito apenas aos arquivos selecionados pelo usuário.",
+        "en": "A private-by-design application with SQLite storage, connected operational views and explicit access only to files selected by the user."
+      },
+      "limit": {
+        "pt": "Projeto pessoal. Não representa uma implantação empresarial ou resultados de clientes.",
+        "en": "Personal project. It does not represent an enterprise deployment or client results."
+      },
+      "delivery": {
+        "pt": [
+          "Aplicação desktop com dados locais em SQLite.",
+          "Áreas para prioridades, projetos, cursos e documentos.",
+          "Backup e restauração com verificações de integridade."
+        ],
+        "en": [
+          "Desktop application with local SQLite storage.",
+          "Views for priorities, projects, courses and documents.",
+          "Backup and restore with integrity checks."
+        ]
+      },
+      "architecture": {
+        "pt": [
+          "Interface React e TypeScript.",
+          "Repositórios tipados e esquema SQLite com migrações.",
+          "Comandos nativos restritos em Tauri/Rust para arquivos e backups."
+        ],
+        "en": [
+          "React and TypeScript interface.",
+          "Typed repositories and a SQLite schema with migrations.",
+          "Restricted Tauri/Rust native commands for files and backups."
+        ]
+      },
+      "flow": {
+        "pt": [
+          "Interface",
+          "Dados locais",
+          "Ações nativas"
+        ],
+        "en": [
+          "Interface",
+          "Local data",
+          "Native actions"
+        ]
+      },
+      "gallery": [
+        {
+          "image": "/assets/focus.png",
+          "label": {
+            "pt": "Foco",
+            "en": "Focus"
+          }
+        },
+        {
+          "image": "/assets/focus-projects.png",
+          "label": {
+            "pt": "Projetos",
+            "en": "Projects"
+          }
+        },
+        {
+          "image": "/assets/focus-courses.png",
+          "label": {
+            "pt": "Cursos",
+            "en": "Courses"
+          }
+        }
+      ],
+      "mediaNote": {
+        "pt": "Capturas reais da aplicação com dados fictícios de demonstração. A interface do aplicativo está em português.",
+        "en": "Actual application screenshots with fictional demonstration data. The application interface is in Portuguese."
+      }
+    },
+    {
+      "id": "radar",
+      "name": "Global Builder Radar",
+      "category": "automation",
+      "image": "/assets/radar.png",
+      "tags": [
+        "Python",
+        "APIs",
+        "Pipeline"
+      ],
+      "goals": [
+        "automate",
+        "organize"
+      ],
+      "url": "https://github.com/everton-soares1985/global-builder-opportunity-radar",
+      "localVideo": "/assets/global-builder-radar-demo.mp4",
+      "summary": {
+        "pt": "Pipeline que coleta, normaliza, deduplica e prioriza oportunidades para transformar pesquisa dispersa em decisões revisáveis.",
+        "en": "A pipeline that collects, normalizes, deduplicates and ranks opportunities, turning scattered research into reviewable decisions."
+      },
+      "problem": {
+        "pt": "Oportunidades relevantes chegam por fontes incompatíveis, com duplicatas, ruído e pouco contexto para decidir o que merece atenção.",
+        "en": "Relevant opportunities arrive through incompatible sources, with duplicates, noise and little context for deciding what deserves attention."
+      },
+      "approach": {
+        "pt": "Coletores por fonte, normalização, deduplicação e ranking determinístico por perfil, encerrando o fluxo em um dashboard de revisão.",
+        "en": "Source-specific collectors, normalization, deduplication and deterministic profile ranking, ending in a review dashboard."
+      },
+      "limit": {
+        "pt": "Os sinais precisam de avaliação humana. O projeto não garante demanda ou retorno financeiro.",
+        "en": "Signals require human assessment. The project does not guarantee demand or financial returns."
+      },
+      "delivery": {
+        "pt": [
+          "Oportunidades de fontes diferentes em uma lista organizada.",
+          "Filtros e classificação determinística para revisão humana.",
+          "Visões separadas para projetos freelance e empregos."
+        ],
+        "en": [
+          "Opportunities from different sources in one organized list.",
+          "Deterministic filtering and ranking for human review.",
+          "Separate views for freelance projects and employment."
+        ]
+      },
+      "architecture": {
+        "pt": [
+          "Coletores por fonte e normalização de registros.",
+          "Deduplicação e classificação por regras de perfil.",
+          "Persistência em SQLite e dashboard para consulta."
+        ],
+        "en": [
+          "Source-specific collectors and record normalization.",
+          "Deduplication and ranking with profile rules.",
+          "SQLite persistence and a review dashboard."
+        ]
+      },
+      "flow": {
+        "pt": [
+          "Fontes",
+          "Normalização",
+          "Revisão"
+        ],
+        "en": [
+          "Sources",
+          "Normalization",
+          "Review"
+        ]
+      },
+      "mediaNote": {
+        "pt": "Captura do dashboard do projeto. Demonstração em vídeo disponível neste portfólio.",
+        "en": "Screenshot of the project dashboard. A video demonstration is available in this portfolio."
+      }
+    },
+    {
+      "id": "maintenance",
+      "name": "Prescriptive Maintenance",
+      "category": "ai",
+      "tags": [
+        "Python",
+        "RAG",
+        "FastAPI"
+      ],
+      "goals": [
+        "documents",
+        "journey"
+      ],
+      "url": "https://github.com/everton-soares1985/prescriptive-maintenance-platform",
+      "image": "/assets/maintenance-01-cover.webp",
+      "summary": {
+        "pt": "Plataforma local que transforma eventos de vibração em hipóteses, evidências e recomendações rastreáveis.",
+        "en": "A local platform that turns vibration events into hypotheses, evidence and traceable recommendations."
+      },
+      "problem": {
+        "pt": "Eventos industriais têm muitas variáveis e uma resposta generativa sem barreiras pode omitir incerteza ou citar procedimentos sem sustentação.",
+        "en": "Industrial events contain many variables, and unconstrained generation can hide uncertainty or cite procedures without supporting evidence."
+      },
+      "approach": {
+        "pt": "O protótipo compara 23 variáveis com 166.796 eventos históricos, aplica um limiar determinístico de confiança e recupera trechos de documentos técnicos aprovados antes de redigir a resposta.",
+        "en": "The prototype compares 23 variables against 166,796 historical events, applies a deterministic confidence threshold and retrieves approved technical excerpts before drafting a response."
+      },
+      "limit": {
+        "pt": "Protótipo demonstrativo criado para um processo seletivo da FIESC. Não foi implantado em ambiente industrial e não substitui manuais, inspeções ou profissionais habilitados.",
+        "en": "Demonstration prototype built for a FIESC hiring process. It was not deployed in an industrial environment and does not replace manuals, inspections or qualified professionals."
+      },
+      "delivery": {
+        "pt": [
+          "Dashboard Streamlit funcional com evento editável e consulta técnica.",
+          "Hipótese por similaridade, confiança e casos históricos visíveis.",
+          "Recomendação com documento, página, trecho de origem e fallback determinístico."
+        ],
+        "en": [
+          "Working Streamlit dashboard with editable events and technical queries.",
+          "Similarity-based hypothesis, confidence and inspectable historical cases.",
+          "Recommendation with document, page, source excerpt and deterministic fallback."
+        ]
+      },
+      "architecture": {
+        "pt": [
+          "FastAPI e contratos OpenAPI para entrada e saída.",
+          "SQLite WAL, vizinhos mais próximos e recuperação TF-IDF sobre PDFs.",
+          "OpenRouter ou Ollama opcionais, com validação de fontes antes da resposta."
+        ],
+        "en": [
+          "FastAPI and OpenAPI contracts for input and output.",
+          "SQLite WAL, nearest-neighbor similarity and TF-IDF retrieval over PDFs.",
+          "Optional OpenRouter or Ollama with source validation before returning a response."
+        ]
+      },
+      "flow": {
+        "pt": [
+          "Evento",
+          "Evidências",
+          "Recomendação"
+        ],
+        "en": [
+          "Event",
+          "Evidence",
+          "Recommendation"
+        ]
+      }
+    },
+    {
+      "id": "publisher",
+      "name": "GitHub Project Publisher",
+      "category": "automation",
+      "tags": [
+        "Python",
+        "Git",
+        "Governance"
+      ],
+      "goals": [
+        "automate",
+        "journey"
+      ],
+      "url": "https://github.com/everton-soares1985/github-project-publisher",
+      "image": "/assets/github-project-publisher-poster.png",
+      "localVideo": "/assets/github-project-publisher-demo.mp4",
+      "summary": {
+        "pt": "CLI de governança que audita repositórios, sinaliza riscos de publicação e converte qualidade em um checklist verificável.",
+        "en": "A governance CLI that audits repositories, flags publication risks and turns quality into a verifiable checklist."
+      },
+      "problem": {
+        "pt": "Publicar projetos exige documentação coerente, higiene Git e proteção contra credenciais ou arquivos privados esquecidos.",
+        "en": "Publishing projects requires coherent documentation, Git hygiene and protection against forgotten credentials or private files."
+      },
+      "approach": {
+        "pt": "Uma CLI de auditoria e verificações antes da publicação. Os comandos audit e check apenas leem o repositório; não publicam nem corrigem arquivos automaticamente.",
+        "en": "A CLI for auditing and checking before publication. The audit and check commands only read the repository; they do not publish or automatically fix files."
+      },
+      "limit": {
+        "pt": "A revisão humana continua necessária antes de publicar qualquer repositório.",
+        "en": "Human review is still required before publishing any repository."
+      },
+      "delivery": {
+        "pt": [
+          "Auditoria local de documentação e organização do repositório.",
+          "Verificações de arquivos sensíveis e possíveis credenciais.",
+          "Relatório de prontidão para revisão antes da publicação."
+        ],
+        "en": [
+          "Local audit of repository documentation and organization.",
+          "Checks for sensitive files and potential credentials.",
+          "Readiness report for review before publication."
+        ]
+      },
+      "architecture": {
+        "pt": [
+          "CLI em Python para audit e check.",
+          "Verificações determinísticas de arquivos e estado Git.",
+          "Saída no terminal e exportação opcional de relatório JSON."
+        ],
+        "en": [
+          "Python CLI with audit and check commands.",
+          "Deterministic checks of files and Git state.",
+          "Terminal output and optional JSON report export."
+        ]
+      },
+      "flow": {
+        "pt": [
+          "Repositório",
+          "Verificações",
+          "Relatório"
+        ],
+        "en": [
+          "Repository",
+          "Checks",
+          "Report"
+        ]
+      }
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes Autonomous Builder",
+      "category": "ai",
+      "image": "/assets/hermes-autonomous-builder-poster.webp",
+      "localVideo": "/assets/hermes-autonomous-builder-demo.mp4",
+      "tags": ["Agentic AI", "Orchestration", "Governance"],
+      "goals": ["automate", "journey"],
+      "url": "https://github.com/everton-soares1985/hermes-autonomous-builder",
+      "summary": {
+        "pt": "Arquitetura V0 para um builder autônomo de software que separa planejamento, implementação e revisão e só conclui trabalho com evidência reproduzível.",
+        "en": "A V0 architecture for an autonomous software builder that separates planning, implementation and review, and only completes work with reproducible evidence."
+      },
+      "problem": {
+        "pt": "Agentes de código podem confundir uma resposta plausível com trabalho concluído, executar fora do escopo ou aprovar a própria implementação.",
+        "en": "Coding agents can mistake a plausible response for completed work, operate beyond scope or approve their own implementation."
+      },
+      "approach": {
+        "pt": "Fluxo sequencial com Architect, Coder e Reviewer isolados. Hermes controla estados, OmniRoute seleciona rotas por papel e gates verificam SHA, testes, diff, critérios e independência antes de DONE.",
+        "en": "A sequential flow with isolated Architect, Coder and Reviewer roles. Hermes owns state, OmniRoute selects routes by role, and gates verify SHA, tests, diff, criteria and independence before DONE."
+      },
+      "limit": {
+        "pt": "V0 documental: contratos, schemas e plano de validação estão publicados, mas o runtime autônomo ainda não foi implementado nem validado em produção.",
+        "en": "Documentation V0: contracts, schemas and the validation plan are published, but the autonomous runtime has not yet been implemented or validated in production."
+      },
+      "delivery": {
+        "pt": ["Arquitetura e máquina de estados com papéis e limites explícitos.", "Contratos JSON para handoffs e veredictos de revisão.", "Plano de segurança, recuperação, quotas e evidências antes de DONE."],
+        "en": ["Architecture and state machine with explicit roles and boundaries.", "JSON contracts for handoffs and review verdicts.", "Security, recovery, quota and evidence plan before DONE."]
+      },
+      "architecture": {
+        "pt": ["Hermes como orquestrador exclusivo das transições de estado.", "OmniRoute restrito à seleção de rota dentro do papel ativo.", "Revisor independente vinculado ao mesmo Git SHA testado."],
+        "en": ["Hermes as the sole orchestrator of state transitions.", "OmniRoute restricted to route selection within the active role.", "Independent reviewer bound to the same tested Git SHA."]
+      },
+      "flow": {
+        "pt": ["Meta autorizada", "Architect", "DONE com evidências"],
+        "en": ["Authorized goal", "Architect", "Evidence-backed DONE"]
+      }
+    }
   ],
-  "courses":[
-    {"title":"Google IT Automation with Python","issuer":"Google / Coursera","status":"done","credential":"https://www.coursera.org/account/accomplishments/professional-cert/BPLDXASSJLHP","credentialId":"BPLDXASSJLHP","tags":["Python","Automation"]},
-    {"title":"Configuration Management and the Cloud","issuer":"Google / Coursera","status":"done","tags":["Cloud"]},
-    {"title":"Troubleshooting and Debugging Techniques","issuer":"Google / Coursera","status":"done","tags":["Debugging"]},
-    {"title":"Introduction to Selenium","issuer":"Simplilearn SkillUp","status":"done","tags":["Automation"]},
-    {"title":"IBM AI Developer Professional Certificate","issuer":"IBM / Coursera","status":"doing","tags":["AI"]},
-    {"title":"Make","issuer":"Make Academy","status":"doing","tags":["Automation"]},
-    {"title":"Multi AI Agent Systems with crewAI","issuer":"DeepLearning.AI","status":"planned","tags":["Agents"]},
-    {"title":"AI Agents in LangGraph","issuer":"DeepLearning.AI","status":"planned","tags":["Agents"]},
-    {"title":"AI Agents and Agentic AI in Python","issuer":"Vanderbilt / Coursera","status":"planned","tags":["Python","Agents"]}
+  "courses": [
+    {
+      "title": "IBM AI Developer Professional Certificate",
+      "issuer": "IBM / Coursera",
+      "status": "done",
+      "credential": "https://coursera.org/share/2b28ae0dfd0d0fdab4bc089f1b8e40aa",
+      "tags": ["AI", "Python", "Software"]
+    },
+    {
+      "title": "Google IT Automation with Python",
+      "issuer": "Google / Coursera",
+      "status": "done",
+      "credential": "https://www.coursera.org/account/accomplishments/specialization/BPLDXASSJLHP",
+      "credentialId": "BPLDXASSJLHP",
+      "tags": ["Python", "Automation", "Git"]
+    },
+    {
+      "title": "Blockchain Deep Dive",
+      "issuer": "Binance Academy",
+      "status": "done",
+      "credential": "https://www.binance.com/en/academy/courses/certificate/c212cdb9c9c581302e714aadc36754cc07b207018f9bd36b99faff54d7bd1ea2",
+      "tags": ["Blockchain", "Web3"]
+    },
+    {
+      "title": "Introduction to Selenium",
+      "issuer": "Simplilearn SkillUp",
+      "status": "done",
+      "tags": ["Automation", "Testing"]
+    },
+    {
+      "title": "AI Automation Explorer",
+      "issuer": "Make",
+      "status": "done",
+      "credential": "https://www.credly.com/badges/f7e0e0bb-2d78-414c-9cbf-e13776702e32/",
+      "tags": ["Automation", "Make"]
+    },
+    {
+      "title": "Information Technology Fundamentals",
+      "issuer": "IBM",
+      "status": "done",
+      "credential": "https://www.credly.com/badges/1c6da203-cd2f-43e9-b131-d8cf13027ded",
+      "tags": ["IT", "Networking", "Support"]
+    },
+    {
+      "title": "AWS Generative AI and AI Agents with Amazon Bedrock",
+      "issuer": "AWS / Coursera",
+      "status": "done",
+      "credential": "https://www.coursera.org/account/accomplishments/verify/1MO2XPYJ9BLW",
+      "tags": ["AWS", "Generative AI", "Agents"]
+    },
+    {
+      "title": "IBM RAG and Agentic AI Professional Certificate",
+      "issuer": "IBM / Coursera",
+      "status": "doing",
+      "tags": ["RAG", "Agents", "MCP"]
+    },
+    {
+      "title": "Building AI Agents and Agentic Workflows Specialization",
+      "issuer": "Coursera",
+      "status": "doing",
+      "tags": ["Agents", "LangGraph"]
+    },
+    {
+      "title": "Managing AI Systems: Development, Deployment, and Governance Specialization",
+      "issuer": "Board Infinity",
+      "status": "planned",
+      "tags": ["AI", "Governance", "MLOps"]
+    },
+    {
+      "title": "AI Security Specialization",
+      "issuer": "Coursera",
+      "status": "planned",
+      "tags": ["AI Security", "Governance"]
+    },
+    {
+      "title": "DevOps and AI on AWS Specialization",
+      "issuer": "AWS / Coursera",
+      "status": "planned",
+      "tags": ["AWS", "DevOps", "AIOps"]
+    }
   ],
-  "books":[
-    {"title":"AI Agents in Depth","author":"Bojie Li","edition":"v1.2","status":"reading"},
-    {"title":"Deep Work","author":"Cal Newport","status":"read","cover":"assets/book-deep-work.jpg","reference":"https://openlibrary.org/works/OL17713267W"},
-    {"title":"Antifrágil","author":"Nassim Nicholas Taleb","status":"read","cover":"assets/book-antifragile.jpg","reference":"https://openlibrary.org/works/OL16726829W"},
-    {"title":"Inteligência Emocional","author":"Daniel Goleman","status":"read"},
-    {"title":"Dar e Receber","author":"Adam Grant","status":"read","cover":"assets/book-give-take.jpg","reference":"https://openlibrary.org/works/OL17312332W"},
-    {"title":"Steve Jobs","author":"Walter Isaacson","status":"read","cover":"assets/book-steve-jobs.jpg","reference":"https://openlibrary.org/works/OL16085155W"},
-    {"title":"Outliers","author":"Malcolm Gladwell","status":"read"},
-    {"title":"Sapiens","author":"Yuval Noah Harari","status":"planned"},
-    {"title":"Em Busca de Sentido","author":"Viktor E. Frankl","status":"planned"},
-    {"title":"Atomic Habits","author":"James Clear","status":"planned"}
+  "books": [
+    {
+      "title": "AI Agents in Depth",
+      "author": "Bojie Li",
+      "edition": "v1.2",
+      "status": "reading"
+    },
+    {
+      "title": "Deep Work",
+      "author": "Cal Newport",
+      "status": "read",
+      "cover": "assets/book-deep-work.jpg",
+      "reference": "https://openlibrary.org/works/OL17713267W"
+    },
+    {
+      "title": "Antifrágil",
+      "author": "Nassim Nicholas Taleb",
+      "status": "read",
+      "cover": "assets/book-antifragile.jpg",
+      "reference": "https://openlibrary.org/works/OL16726829W"
+    },
+    {
+      "title": "Inteligência Emocional",
+      "author": "Daniel Goleman",
+      "status": "read"
+    },
+    {
+      "title": "Dar e Receber",
+      "author": "Adam Grant",
+      "status": "read",
+      "cover": "assets/book-give-take.jpg",
+      "reference": "https://openlibrary.org/works/OL17312332W"
+    },
+    {
+      "title": "Steve Jobs",
+      "author": "Walter Isaacson",
+      "status": "read",
+      "cover": "assets/book-steve-jobs.jpg",
+      "reference": "https://openlibrary.org/works/OL16085155W"
+    },
+    {
+      "title": "Outliers",
+      "author": "Malcolm Gladwell",
+      "status": "read"
+    },
+    {
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "status": "planned"
+    },
+    {
+      "title": "Em Busca de Sentido",
+      "author": "Viktor E. Frankl",
+      "status": "planned"
+    },
+    {
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "status": "planned"
+    }
   ]
 }

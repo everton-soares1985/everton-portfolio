@@ -19,7 +19,7 @@ export const config={
   concurrent:bounded(process.env.MAX_CONCURRENT_RUNS,2,1,10),perHour:bounded(process.env.RUNS_PER_HOUR,6,1,100),globalPerHour:bounded(process.env.GLOBAL_RUNS_PER_HOUR,30,1,1000),trustProxy:process.env.TRUST_PROXY==='true'
 };
 const log=(level,event,extra={})=>process.stdout.write(JSON.stringify({time:new Date().toISOString(),level,event,...extra})+'\n');
-const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.pdf':'application/pdf','.ttf':'font/ttf'};
+const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.mp4':'video/mp4','.pdf':'application/pdf','.ttf':'font/ttf'};
 
 export function createLimiter(settings,now=Date.now){
   const visitors=new Map();let hourStart=now(),globalCount=0,active=0;
@@ -35,7 +35,7 @@ export function createServer(settings=config){
  const limiter=createLimiter(settings);
  return http.createServer(async(req,res)=>{
   res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','strict-origin-when-cross-origin');
-  res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' https:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'");
+  res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' https:; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'");
   res.setHeader('Permissions-Policy','camera=(), microphone=(), geolocation=()');
   const json=(code,obj)=>{res.writeHead(code,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify(obj));};
   try{

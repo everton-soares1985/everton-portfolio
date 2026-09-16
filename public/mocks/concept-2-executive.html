@@ -4,358 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mock 2: Executive Minimalist — Everton Soares</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #090a0d;
-      --surface: #111318;
-      --surface-subtle: #161a22;
-      --border: rgba(255, 255, 255, 0.08);
-      --border-accent: rgba(59, 130, 246, 0.35);
-      --fg: #f3f4f6;
-      --muted: #9ca3af;
-      --subtle: #6b7280;
-      --accent: #3b82f6;
-      --accent-warm: #e5e7eb;
-      --font-serif: 'Newsreader', Georgia, serif;
-      --font-sans: 'Inter', system-ui, sans-serif;
-      --font-mono: 'Space Mono', monospace;
-    }
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background-color: var(--bg);
-      color: var(--fg);
-      font-family: var(--font-sans);
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
 
-    .wrapper {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
 
-    /* Executive Top Bar */
-    .topbar {
-      border-bottom: 1px solid var(--border);
-      padding: 24px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .brand-initials {
-      font-family: var(--font-mono);
-      font-weight: 700;
-      font-size: 14px;
-      color: #fff;
-      border: 1px solid var(--border);
-      padding: 4px 8px;
-      border-radius: 4px;
-    }
-    .brand-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.2px;
-    }
-    .brand-sub {
-      font-size: 13px;
-      color: var(--subtle);
-    }
-    .top-actions {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .top-link {
-      color: var(--muted);
-      font-size: 13px;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .top-link:hover { color: #fff; }
-    .btn-executive {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 14px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-executive:hover {
-      border-color: rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 80px 0 60px;
-      border-bottom: 1px solid var(--border);
-    }
-    .hero-pre {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-    .hero-statement {
-      font-family: var(--font-serif);
-      font-size: 54px;
-      font-weight: 400;
-      line-height: 1.15;
-      letter-spacing: -1px;
-      color: #fff;
-      margin-bottom: 28px;
-      max-width: 860px;
-    }
-    .hero-statement em {
-      font-style: italic;
-      color: #93c5fd;
-    }
-    .hero-bio {
-      font-size: 18px;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 720px;
-      margin-bottom: 36px;
-    }
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      padding-top: 30px;
-      border-top: 1px solid var(--border);
-    }
-    .metric-item strong {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 20px;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-    .metric-item span {
-      font-size: 13px;
-      color: var(--subtle);
-    }
-
-    /* Narrative Bridge Box */
-    .narrative-box {
-      margin: 60px 0;
-      padding: 40px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-    .author-frame img {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      border-radius: 8px;
-      filter: grayscale(20%);
-    }
-    .narrative-title {
-      font-family: var(--font-serif);
-      font-size: 26px;
-      color: #fff;
-      margin-bottom: 12px;
-    }
-    .narrative-text {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-
-    /* Case Studies Section */
-    .section-title-wrap {
-      padding: 50px 0 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 1px solid var(--border);
-    }
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: 32px;
-      color: #fff;
-    }
-    .section-index {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--subtle);
-    }
-
-    /* Case Study Item */
-    .case-study {
-      padding: 50px 0;
-      border-bottom: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .case-study.reverse {
-      grid-template-columns: 1fr 1.2fr;
-    }
-    .case-media {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      background: #000;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    }
-    .case-media img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .case-badge {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-    .case-heading {
-      font-size: 26px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 14px;
-      line-height: 1.2;
-    }
-    .case-summary {
-      color: var(--muted);
-      font-size: 15px;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-    .case-breakdown {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
-      background: rgba(255, 255, 255, 0.02);
-      padding: 18px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-    }
-    .breakdown-row {
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      font-size: 13px;
-    }
-    .breakdown-label {
-      color: var(--subtle);
-      font-family: var(--font-mono);
-    }
-    .breakdown-val {
-      color: #e2e8f0;
-    }
-    .case-actions {
-      display: flex;
-      gap: 14px;
-    }
-    .btn-solid {
-      background: #fff;
-      color: #000;
-      font-weight: 600;
-      font-size: 13px;
-      padding: 9px 18px;
-      border-radius: 6px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.2s;
-    }
-    .btn-solid:hover { background: #e2e8f0; }
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: #fff;
-      font-size: 13px;
-      padding: 9px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
-    .btn-outline:hover {
-      border-color: rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    /* Trajectory Timeline */
-    .timeline {
-      padding: 40px 0 60px;
-    }
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    }
-    .timeline-period {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: var(--subtle);
-    }
-    .timeline-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-    .timeline-desc {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* Executive Footer */
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 50px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--subtle);
-      font-size: 13px;
-    }
-    .footer a { color: var(--muted); text-decoration: none; }
-    .footer a:hover { color: #fff; }
-
-    @media (max-width: 768px) {
-      .hero-statement { font-size: 36px; }
-      .narrative-box { grid-template-columns: 1fr; padding: 24px; }
-      .case-study, .case-study.reverse { grid-template-columns: 1fr; gap: 24px; }
-      .timeline-item { grid-template-columns: 1fr; gap: 8px; }
-      .hero-metrics { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="/mocks/executive.css">
 </head>
 <body>
   <div class="wrapper">
@@ -382,14 +35,14 @@
     <section class="hero">
       <div class="hero-pre">Filosofia de Engenharia · São Paulo, Brasil</div>
       <h1 class="hero-statement">
-        Da mecânica de alta precisão à engenharia de inteligência artificial. <em>Sistemas construídos para não quebrar.</em>
+        Da formação técnica à construção de software. <em>Ferramentas para organizar o trabalho.</em>
       </h1>
       <p class="hero-bio">
-        Especialista no desenvolvimento de automações, pipelines de dados e sistemas baseados em modelos de IA e agentes autônomos. Aplicações desktop com princípios local-first e foco absoluto em confiabilidade e privacidade.
+        Projetos próprios em automação com Python, integrações e IA aplicada. Ferramentas desktop e pipelines de informação, com revisão humana e limites explícitos.
       </p>
       <div class="hero-metrics">
         <div class="metric-item">
-          <strong>Zero Telemetria</strong>
+          <strong>Dados locais</strong>
           <span>Aplicações com isolamento e banco local</span>
         </div>
         <div class="metric-item">
@@ -409,12 +62,12 @@
         <img src="../assets/everton.jpg" alt="Everton Soares">
       </div>
       <div>
-        <h2 class="narrative-title">Por que a base aeronáutica importa na era da IA</h2>
+        <h2 class="narrative-title">Uma base técnica. Novas ferramentas.</h2>
         <p class="narrative-text">
-          Na manutenção de aeronaves, um erro nunca é "apenas um bug"; é uma falha inaceitável. Quando migrei para a engenharia de software e inteligência artificial, trouxe essa exata disciplina: enquanto muitos constroem interfaces que dependem de modelos probabilísticos sem salvaguardas, eu projeto sistemas com limites rígidos, validação determinística e governança.
+          Minha formação técnica trouxe interesse por procedimentos, investigação de falhas e compreensão dos sistemas. Hoje aplico esse modo de pensar aos meus projetos pessoais de software e automação, com apoio de ferramentas de IA, revisão e testes.
         </p>
-        <div style="font-size: 13px; color: var(--accent); font-family: var(--font-mono);">
-          Python · FastAPI · CrewAI / LangGraph · Tauri / Rust · SQLite
+        <div class="executive-detail-1">
+          Python · APIs · Tauri · React · SQLite
         </div>
       </div>
     </div>
@@ -490,14 +143,14 @@
 
     <!-- Case 3: Prescriptive Maintenance Platform -->
     <article class="case-study">
-      <div style="background: var(--surface); padding: 36px; border-radius: 10px; border: 1px solid var(--border);">
-        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent); margin-bottom: 10px;">ARQUITETURA DE DADOS</div>
-        <div style="font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 16px;">Pipeline RAG para Manuais de Engenharia</div>
-        <p style="font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 20px;">
-          Ingestão de manuais técnicos volumosos (PDF), geração de embeddings vetoriais e orquestração de respostas fundamentadas via FastAPI, garantindo rastreabilidade por página e capítulo original.
+      <div class="executive-detail-2">
+        <div class="executive-detail-3">ARQUITETURA DE DADOS</div>
+        <div class="executive-detail-4">Pipeline RAG para Manuais de Engenharia</div>
+        <p class="executive-detail-5">
+          Demonstração de recuperação de informações para consulta contextual de documentos técnicos. Respostas precisam ser conferidas nas fontes; não substitui manuais ou profissionais habilitados.
         </p>
-        <div style="font-family: var(--font-mono); font-size: 12px; color: #94a3b8; background: #000; padding: 14px; border-radius: 6px; border-left: 3px solid var(--accent);">
-          [Manual PDF] ➔ [Chunking] ➔ [Vector DB] ➔ [Prompt Grounding] ➔ [Citação Exata]
+        <div class="executive-detail-6">
+          [Documentos] ➔ [Recuperação] ➔ [Consulta contextual]
         </div>
       </div>
       <div>
@@ -513,11 +166,11 @@
           </div>
           <div class="breakdown-row">
             <span class="breakdown-label">Solução:</span>
-            <span class="breakdown-val">Recuperação contextual estrita com citação de capítulo e manual técnico correspondente.</span>
+            <span class="breakdown-val">Recuperação de informações para apoiar consultas a documentos de manutenção.</span>
           </div>
           <div class="breakdown-row">
             <span class="breakdown-label">Stack:</span>
-            <span class="breakdown-val">Python, FastAPI, Embeddings, Vector Search</span>
+            <span class="breakdown-val">Python, FastAPI, RAG</span>
           </div>
         </div>
         <div class="case-actions">
@@ -537,21 +190,14 @@
         <div class="timeline-period">Atualidade</div>
         <div>
           <h4 class="timeline-title">Engenharia de Software, IA & Automação</h4>
-          <p class="timeline-desc">Construção de projetos próprios em Python, arquiteturas de agentes (CrewAI/LangGraph) e aplicações desktop em Tauri. Formação avançada com IBM AI Developer e Google IT Automation.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-period">2026</div>
-        <div>
-          <h4 class="timeline-title">Inspeção Técnica de Segurança Veicular</h4>
-          <p class="timeline-desc">Atuação como Inspetor Técnico na Atlântida Inspeção Veicular Ltda., aplicando protocolos técnicos rigorosos de segurança e identificação de melhorias em processos.</p>
+          <p class="timeline-desc">Construção de projetos próprios em Python, integrações com IA e aplicações desktop em Tauri. Estudos em IBM AI Developer e formação em Google IT Automation, conforme o catálogo pessoal.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-period">Base de Formação</div>
         <div>
           <h4 class="timeline-title">Mecânica de Aeronaves (Manutenção Aeronáutica)</h4>
-          <p class="timeline-desc">Formação técnica sólida com homologação ANAC. Investigação profunda de causas raiz, obediência a procedimentos operacionais padrão e gestão de riscos em sistemas críticos.</p>
+          <p class="timeline-desc">Formação técnica em Mecânica de Aeronaves. Base em procedimentos, investigação de falhas e funcionamento de sistemas.</p>
         </div>
       </div>
     </div>
@@ -561,7 +207,7 @@
       <div>
         <strong>Everton Soares</strong> · São Paulo, Brasil
       </div>
-      <div style="display: flex; gap: 20px;">
+      <div class="executive-detail-7">
         <a href="../downloads/Everton-Soares-PT.pdf" download>Currículo (PT)</a>
         <a href="../downloads/Everton-Soares-EN.pdf" download>Resume (EN)</a>
         <a href="https://www.linkedin.com/in/everton-de-oliveira-soares-857630146/" target="_blank">LinkedIn</a>
