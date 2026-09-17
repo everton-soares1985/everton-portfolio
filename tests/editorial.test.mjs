@@ -95,9 +95,11 @@ test('the assembled Publisher video and poster are local public assets',async()=
   assert.equal(video.subarray(4,8).toString(),'ftyp');
 });
 
-test('the public English resume is the approved replacement',async()=>{
-  const resume=await readFile(new URL('../public/downloads/Everton-Soares-EN.pdf',import.meta.url));
-  assert.equal(createHash('sha256').update(resume).digest('hex'),'716d942429c80826ef5030d26d5296114395a34868de2e3dea8c8474ebaa8969');
+test('the public resumes are the approved replacements',async()=>{
+  const english=await readFile(new URL('../public/downloads/Everton-Soares-EN.pdf',import.meta.url));
+  const portuguese=await readFile(new URL('../public/downloads/Everton-Soares-PT.pdf',import.meta.url));
+  assert.equal(createHash('sha256').update(english).digest('hex'),'c7052dc8846313a68659b9644b4b81a7c97745f960900a1d9f4b3711ef26d7e3');
+  assert.equal(createHash('sha256').update(portuguese).digest('hex'),'83f3e879816df5844c74e0fd630cb7d3d975b27add3886e9171ca7c58e8b9335');
 });
 
 test('Executive mock is self-hosted and contains no inline code or external fonts',async()=>{
